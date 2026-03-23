@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   🎯 MOTION SYSTEM
+================================= */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+  --ease-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+}
+
+/* ===============================
+   🧱 BASE
+================================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===============================
+   ✍️ TYPOGRAPHY
+================================= */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+/* ===============================
+   🎬 GENERIC ANIMATIONS
+================================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s var(--ease-out);
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out);
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+.slide-left {
+  transform: translateX(-60px);
+  opacity: 0;
+  transition: all 0.8s var(--ease-out);
+}
+
+.slide-left.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-right {
+  transform: translateX(60px);
+  opacity: 0;
+  transition: all 0.8s var(--ease-out);
+}
+
+.slide-right.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.scale-in {
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.7s var(--ease-out);
+}
+
+.scale-in.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ===============================
+   🍔 MENU SYSTEM (FIXED)
+================================= */
+
+/* Overlay fade */
+.menu-overlay {
+  transition: opacity 0.5s var(--ease-out);
+}
+
+/* Backdrop blur */
+.menu-backdrop {
+  backdrop-filter: blur(12px);
+  transition: opacity 0.5s var(--ease-out);
+}
+
+/* Slide panel */
+.menu-panel {
+  transform: translateX(100%) scale(0.96);
+  transition: transform 0.7s var(--ease-out);
+  will-change: transform;
+}
+
+.menu-panel.open {
+  transform: translateX(0) scale(1);
+}
+
+/* ===============================
+   🔥 NAV ITEMS (IMPORTANT FIX)
+================================= */
+
+/* Default visible (prevents "invisible menu" bug) */
+.menu-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animate ONLY when JS adds class */
+.menu-item.animate {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.menu-item.animate.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s var(--ease-out);
+}
+
+.menu-item>div:first-child:hover {
+  opacity: 0.7;
+}
+
+/* Hover interaction */
+.menu-link {
+  transition: all 0.35s var(--ease-out);
+}
+
+.menu-link:hover {
+  transform: translateX(8px);
+  opacity: 0.6;
+}
+
+/* ===============================
+   🎯 BUTTONS
+================================= */
+button {
+  transition: all 0.3s var(--ease-out);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   🎭 TEXT MASK REVEAL
+================================= */
+.mask-line {
+  overflow: hidden;
+}
+
+.mask-line span {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 1s var(--ease-out);
+}
+
+.mask-line.active span {
+  transform: translateY(0);
+}
+
+/* ===============================
+   🌌 BACKGROUND EFFECT
+================================= */
+.noise-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 229, 160, 0.12), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(108, 99, 255, 0.12), transparent 60%);
+
+  filter: blur(100px);
+  opacity: 0.6;
+
+  animation: float 14s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(-20px);
+  }
+
+  to {
+    transform: translateY(20px);
+  }
+}
+
+/* ===============================
+   🧩 CARD INTERACTIONS
+================================= */
+.card {
+  transition: all 0.4s var(--ease-out);
+}
+
+.card:hover {
+  transform: scale(1.04);
+}
+
+.mask-line {
+  overflow: hidden;
+}
+
+.mask-line span {
+  display: block;
+  transform: translateY(100%);
+  transition: transform 1s var(--ease-out);
+}
+
+.mask-line.active span {
+  transform: translateY(0);
+}
+
+/* CONTAINER EXPAND (top → bottom) */
+.reveal-block {
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+}
+
+.reveal-block.active {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+/* TEXT MASK (bottom → up) */
+.mask-line {
+  overflow: hidden;
+  display: block;
+}
+
+.mask-line span {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 0.6s ease;
+}
+
+.mask-line.active span {
+  transform: translateY(0%);
+}
+
+/* LEFT → RIGHT REVEAL */
+.reveal-left {
+  transform: translateX(-40px);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.reveal-left.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* FINAL SCALE SETTLE */
+.scale-in {
+  transform: scale(0.96);
+  transition: transform 0.6s ease;
+}
+
+.scale-in.active {
+  transform: scale(1);
+}

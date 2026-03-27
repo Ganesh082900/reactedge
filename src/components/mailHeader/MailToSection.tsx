@@ -1,93 +1,114 @@
 "use client";
 import React, { useState } from "react";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 export default function MailToSection() {
+    useScrollAnimation();
     const [email, setEmail] = useState("");
 
-    const handleSubmit = () => {
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
         if (!email) return;
-        window.location.href = `mailto:info@shift5.io?subject=Inquiry&body=Hello, I'm interested. My email is ${email}`;
+        window.location.href = `mailto:info@reactedge.io?subject=Inquiry&body=Hello, I'm interested. My email is ${email}`;
     };
 
     return (
-        <section className="bg-secondary text-primary px-6 md:px-16 py-20 md:py-28">
+        <section className="bg-shift-orange text-shift-dark px-6 md:px-12 lg:px-16 py-20 md:py-32 relative overflow-hidden">
             {/* Heading */}
-            <div className="max-w-5xl mx-auto text-center">
-                <h1 className="text-3xl md:text-6xl font-semibold leading-tight">
-                    Ready to harness your
-                    <br />
-                    Op / Intelligence?
-                </h1>
+            <div data-animate className="max-w-6xl mx-auto text-center mb-16 md:mb-24 fade-up">
+                <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                    Ready to harness your{" "}
+                    <span className="inline-block">
+                        Op<span className="opacity-60">/</span>Intelligence?
+                    </span>
+                </h2>
             </div>
 
-            {/* Email Input Design */}
-            <div className="flex justify-center items-center mt-16">
-                <div className="flex items-center gap-4 md:gap-10">
-                    <span className="text-4xl md:text-6xl">(</span>
+            {/* Email Input with Parentheses */}
+            <form data-animate onSubmit={handleSubmit} className="max-w-5xl mx-auto fade-up">
+                <div className="flex justify-center items-center mb-12 md:mb-16">
+                    <div className="flex items-center gap-6 md:gap-12 w-full max-w-4xl">
+                        <span className="text-6xl md:text-8xl lg:text-9xl font-light leading-none">
+                            (
+                        </span>
 
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="bg-transparent border-b border-primary/40 text-center px-4 py-2 text-lg md:text-2xl placeholder-primary/60 focus:outline-none w-48 md:w-80"
-                    />
+                        <div className="flex-1 max-w-2xl">
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                                className="w-full bg-transparent border-b-2 border-shift-dark/30 text-center px-4 py-3 md:py-4 text-xl md:text-2xl lg:text-3xl placeholder-shift-dark/60 focus:outline-none focus:border-shift-dark transition-colors"
+                            />
+                        </div>
 
-                    <span className="text-4xl md:text-6xl">)</span>
+                        <span className="text-6xl md:text-8xl lg:text-9xl font-light leading-none">
+                            )
+                        </span>
+                    </div>
                 </div>
-            </div>
 
-            {/* Button */}
-            <div className="flex justify-center mt-10">
-                <button
-                    onClick={handleSubmit}
-                    className="border border-primary/40 px-8 py-3 rounded-full text-xs tracking-widest uppercase hover:bg-primary hover:text-secondary transition"
-                >
-                    Continue
-                </button>
-            </div>
+                {/* Continue Button */}
+                <div className="flex justify-center">
+                    <button
+                        type="submit"
+                        className="border-2 border-shift-dark/40 px-10 py-3 rounded-full text-xs tracking-widest uppercase hover:bg-shift-dark hover:text-shift-orange transition-all duration-400 font-mono lift-sm hover:scale-105"
+                    >
+                        CONTINUE
+                    </button>
+                </div>
+            </form>
 
-            {/* Divider */}
-            <div className="border-t border-primary/30 mt-20 pt-10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-                    {/* Left */}
-                    <div className="uppercase tracking-widest text-xs opacity-70">
-                        <p>Get in touch to</p>
-                        <p>learn more.</p>
+            {/* Contact Information */}
+            <div data-animate className="max-w-6xl mx-auto mt-20 md:mt-28 pt-12 md:pt-16 border-t border-shift-dark/30 fade-up">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+                    {/* Left - Get in touch */}
+                    <div className="md:col-span-3">
+                        <p className="uppercase tracking-wider text-xs md:text-sm font-mono leading-relaxed">
+                            GET IN<br />
+                            TOUCH TO<br />
+                            LEARN<br />
+                            MORE.
+                        </p>
                     </div>
 
                     {/* Phone */}
-                    <div>
-                        <p className="uppercase text-xs opacity-70 mb-1">Phone</p>
+                    <div className="md:col-span-4">
+                        <p className="uppercase text-xs md:text-sm mb-2 font-mono tracking-wider">
+                            PHONE
+                        </p>
                         <a
                             href="tel:+17038103320"
-                            className="text-xl md:text-2xl font-medium hover:underline"
+                            className="text-2xl md:text-3xl lg:text-4xl font-normal hover:opacity-70 transition-opacity"
                         >
                             +1 703 810 3320
                         </a>
                     </div>
 
-                    {/* Emails */}
-                    <div>
-                        <div className="mb-4">
-                            <p className="uppercase text-xs opacity-70 mb-1">
-                                General Inquiries
+                    {/* Email Addresses */}
+                    <div className="md:col-span-5 space-y-6 md:space-y-8">
+                        <div>
+                            <p className="uppercase text-xs md:text-sm mb-2 font-mono tracking-wider">
+                                GENERAL INQUIRIES
                             </p>
                             <a
-                                href="mailto:info@shift5.io"
-                                className="text-lg md:text-xl hover:underline"
+                                href="mailto:info@reactedge.io"
+                                className="text-xl md:text-2xl lg:text-3xl font-normal hover:opacity-70 transition-opacity"
                             >
-                                info@shift5.io
+                                info@reactedge.io
                             </a>
                         </div>
 
                         <div>
-                            <p className="uppercase text-xs opacity-70 mb-1">Press</p>
+                            <p className="uppercase text-xs md:text-sm mb-2 font-mono tracking-wider">
+                                PRESS
+                            </p>
                             <a
-                                href="mailto:press@shift5.io"
-                                className="text-lg md:text-xl hover:underline"
+                                href="mailto:press@reactedge.io"
+                                className="text-xl md:text-2xl lg:text-3xl font-normal hover:opacity-70 transition-opacity"
                             >
-                                press@shift5.io
+                                press@reactedge.io
                             </a>
                         </div>
                     </div>

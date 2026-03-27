@@ -9,11 +9,11 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-black/10">
+            <header className="fixed top-0 left-0 w-full z-50">
                 <div className="max-w-[1280px] mx-auto px-6 flex justify-between items-center h-[80px]">
 
                     {/* LOGO */}
-                    <div className="font-bold text-xl tracking-tight">SHIFT5</div>
+                    <div className="font-bold text-xl tracking-tight">REACTEDGE</div>
 
                     {/* MENU */}
                     <button

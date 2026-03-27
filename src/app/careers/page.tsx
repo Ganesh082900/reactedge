@@ -1,3 +1,5 @@
+"use client";
+
 import MainContent from "@/components/sections/MainContent";
 
 export default function Careers() {

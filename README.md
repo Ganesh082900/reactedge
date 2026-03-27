@@ -1,4 +1,4 @@
-Here’s a **production-grade README.md** tailored for your repo — inspired by [Shift5 Official Website](https://shift5.io/?utm_source=chatgpt.com) but rewritten as **reActEdge** (clean, SEO-ready, GitHub-quality).
+Here's a **production-grade README.md** tailored for your repo — inspired by operational intelligence platforms but rewritten as **reActEdge** (clean, SEO-ready, GitHub-quality).
 
 ---
 
@@ -157,7 +157,7 @@ reActEdge draws inspiration from real-world **Operational Intelligence platforms
 
 * Collect and analyze onboard system data
 * Provide real-time visibility into cyber threats and system health
-* Enable faster decision-making at both asset and fleet levels ([shift5.io][3])
+* Enable faster decision-making at both asset and fleet levels
 
 ---
 

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 interface RightContent {
     icon?: React.ReactNode;
@@ -21,6 +22,8 @@ export default function MainContent({
     textColor = "#000000",
     rightContent,
 }: MainContentProps) {
+    useScrollAnimation();
+    
     return (
         <section
             className="relative w-full min-h-screen flex items-center overflow-hidden"
@@ -31,17 +34,14 @@ export default function MainContent({
         >
             {/* CONTAINER */}
             <div className="max-w-[1280px] mx-auto w-full px-6 relative">
-
-                {/* NAV SPACING */}
-                <div className="pt-24" />
-
                 {/* GRID */}
                 <div className="flex justify-between items-start">
 
                     {/* LEFT BIG TEXT */}
                     <div className="w-[65%]">
                         <h1
-                            className="font-extrabold leading-[0.85] tracking-[-0.02em]"
+                            data-animate
+                            className="font-extrabold leading-[0.85] tracking-tighter fade-up"
                             style={{
                                 fontSize: "clamp(64px, 12vw, 180px)",
                             }}
@@ -53,7 +53,8 @@ export default function MainContent({
                     {/* RIGHT CARD */}
                     <div className="w-[32%] flex justify-end">
                         <div
-                            className="p-10 rounded-xl"
+                            data-animate
+                            className="p-10 rounded-xl scale-in"
                             style={{
                                 background: "#ff4d3d",
                                 color: "#000",
@@ -69,7 +70,7 @@ export default function MainContent({
                             )}
 
                             {/* STATEMENT */}
-                            <h2 className="text-2xl font-semibold leading-snug">
+                            <h2 className="text-2xl font-bold leading-snug tracking-tight">
                                 {rightContent.statement}
                             </h2>
 

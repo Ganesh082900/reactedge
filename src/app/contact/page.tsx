@@ -1,7 +1,11 @@
+"use client";
+
 import MainContent from "@/components/sections/MainContent";
 import ContactSection from "@/components/sections/ContactSection";
+import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 export default function Contact() {
+    useScrollAnimation();
     return (
         <div className="min-h-screen flex flex-col items-center justify-center">
             <div>
@@ -24,9 +28,9 @@ export default function Contact() {
                                 <polygon points="50,40 60,60 40,60" />
                             </svg>
                         ),
-                        statement: "Ready To Learn More About Shift5?",
+                        statement: "Ready To Learn More About ReActEdge?",
                         description:
-                            "SHIFT5 ENABLES SMARTER, FASTER DECISIONS THROUGH REAL-TIME DATA ACCESS, CONTEXTUAL INSIGHTS, AND ACTIONABLE ANALYTICS AT THE EDGE FOR COMMERCIAL AVIATION, RAIL, AND DEFENSE.",
+                            "REACTEDGE ENABLES SMARTER, FASTER DECISIONS THROUGH REAL-TIME DATA ACCESS, CONTEXTUAL INSIGHTS, AND ACTIONABLE ANALYTICS AT THE EDGE FOR COMMERCIAL AVIATION, RAIL, AND DEFENSE.",
                     }}
                 />
             </div>
@@ -36,7 +40,7 @@ export default function Contact() {
                 <div className="absolute top-0 left-0 w-full h-px bg-white/20" />
 
                 {/* CONTENT */}
-                <div className="max-w-[1280px] mx-auto">
+                <div data-animate className="max-w-[1280px] mx-auto fade-up">
                     <p className="text-[clamp(28px,4vw,64px)] leading-[1.1] font-semibold tracking-[-0.02em] text-white/80">
                         Whether you're interested in learning more about our solutions,
                         product demonstrations, partnership discussions, or joining our team,

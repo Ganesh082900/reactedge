@@ -162,6 +162,7 @@ p {
   opacity: 0;
   transition: opacity 0.5s var(--ease-out);
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 .card-container:hover::before {

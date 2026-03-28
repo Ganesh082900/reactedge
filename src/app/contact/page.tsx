@@ -8,32 +8,30 @@ export default function Contact() {
     useScrollAnimation();
     return (
         <div className="min-h-screen flex flex-col items-center justify-center">
-            <div>
-                <MainContent
-                    text={`Get In\nTouch.`}
-                    bgColor="#EDEDED"
-                    textColor="#0A0F1C"
-                    rightContent={{
-                        icon: (
-                            <svg
-                                width="48"
-                                height="48"
-                                viewBox="0 0 100 100"
-                                fill="none"
-                                stroke="#0A0F1C"
-                                strokeWidth="1.2"
-                            >
-                                <polygon points="50,10 90,80 10,80" />
-                                <polygon points="50,25 75,70 25,70" />
-                                <polygon points="50,40 60,60 40,60" />
-                            </svg>
-                        ),
-                        statement: "Ready To Learn More About ReActEdge?",
-                        description:
-                            "REACTEDGE ENABLES SMARTER, FASTER DECISIONS THROUGH REAL-TIME DATA ACCESS, CONTEXTUAL INSIGHTS, AND ACTIONABLE ANALYTICS AT THE EDGE FOR COMMERCIAL AVIATION, RAIL, AND DEFENSE.",
-                    }}
-                />
-            </div>
+            <MainContent
+                text={`Get In\nTouch.`}
+                bgColor="#EDEDED"
+                textColor="#0A0F1C"
+                rightContent={{
+                    icon: (
+                        <svg
+                            width="48"
+                            height="48"
+                            viewBox="0 0 100 100"
+                            fill="none"
+                            stroke="#0A0F1C"
+                            strokeWidth="1.2"
+                        >
+                            <polygon points="50,10 90,80 10,80" />
+                            <polygon points="50,25 75,70 25,70" />
+                            <polygon points="50,40 60,60 40,60" />
+                        </svg>
+                    ),
+                    statement: "Ready To Learn More About ReActEdge?",
+                    description:
+                        "REACTEDGE ENABLES SMARTER, FASTER DECISIONS THROUGH REAL-TIME DATA ACCESS, CONTEXTUAL INSIGHTS, AND ACTIONABLE ANALYTICS AT THE EDGE FOR COMMERCIAL AVIATION, RAIL, AND DEFENSE.",
+                }}
+            />
             <section className="relative w-full bg-[#0A0F1C] text-white py-24 px-6 overflow-hidden">
 
                 {/* TOP BORDER */}

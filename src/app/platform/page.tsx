@@ -1,8 +1,15 @@
 "use client";
 
 import MainContent from "@/components/sections/MainContent";
+import StructuredData from '@/components/seo/StructuredData';
+import { generateWebPageSchema } from '@/lib/seo';
 
 export default function Platform() {
+    const webPageSchema = generateWebPageSchema({
+        title: 'Platform - ReActEdge',
+        description: 'Mission-first cybersecurity platform with relentless innovation and data-driven precision for defense systems.',
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://reactedge.com'}/platform`,
+    });
     return (
         <div className="min-h-screen flex items-center justify-center">
             <MainContent
@@ -31,5 +38,6 @@ export default function Platform() {
                 }}
             />
         </div>
+        </>
     );
 }

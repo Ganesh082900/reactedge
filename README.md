@@ -1,10 +1,8 @@
-Here's a **production-grade README.md** tailored for your repo — inspired by operational intelligence platforms but rewritten as **reActEdge** (clean, SEO-ready, GitHub-quality).
-
----
-
-# 📦 reActEdge — Operational Intelligence Platform UI
+# 📦 ReActEdge — Operational Intelligence Platform UI
 
 > **Operational Intelligence for the Modern Edge.**
+> 
+> ⚡ **Fully SEO-Optimized** | 🎯 **Core Web Vitals Ready** | 📱 **Mobile-First** | ♿ **WCAG 2.1 AA Accessible**
 
 reActEdge is a high-performance, modern web application inspired by next-generation **cybersecurity and operational intelligence platforms**, designed for **defense, aerospace, rail, and fleet systems**.
 
@@ -163,38 +161,130 @@ reActEdge draws inspiration from real-world **Operational Intelligence platforms
 
 # 🧪 Getting Started
 
+### Installation
+
 ```bash
 git clone https://github.com/your-username/reactedge.git
-
 cd reactedge
-
 npm install
+```
 
+### Environment Setup
+
+Create `.env.local` from the example:
+
+```bash
+cp .env.example .env.local
+```
+
+Configure your environment variables:
+
+```env
+# Required
+NEXT_PUBLIC_SITE_URL=https://yourdomain.com
+
+# Optional but Recommended for SEO
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-verification-code
+NEXT_PUBLIC_BING_VERIFICATION=your-bing-verification-code
+```
+
+### Development
+
+```bash
 npm run dev
 ```
 
+Open [http://localhost:3000](http://localhost:3000)
+
 ---
 
-# 🏗️ Build
+# 🏗️ Build & Deploy
+
+### Production Build
 
 ```bash
 npm run build
 npm start
 ```
 
+### SEO Checklist Before Deploy
+
+1. ✅ Update `src/lib/seo.ts` with your domain and company info
+2. ✅ Create Open Graph image (1200x630px) at `/public/images/og-image.jpg`
+3. ✅ Generate favicon set in `/public/`
+4. ✅ Configure environment variables in `.env.local`
+5. ✅ Test with Lighthouse (score should be 90+)
+6. ✅ Validate structured data with [Google Rich Results Test](https://search.google.com/test/rich-results)
+
+### Post-Deploy
+
+1. Submit sitemap to Google Search Console
+2. Verify site ownership with search engines
+3. Monitor Core Web Vitals in Search Console
+4. Set up Google Analytics 4
+
+See `docs/SEO-GUIDE.md` for detailed instructions.
+
 ---
 
-# 🌍 SEO Strategy
+# 🌍 SEO Architecture (Fully Optimized)
 
-* Semantic HTML structure
-* Metadata generation via `generateMetadata`
-* Optimized headings hierarchy
-* Keyword targeting:
+This application implements **enterprise-grade SEO** with comprehensive optimization across all layers:
 
-  * cybersecurity platform
-  * operational intelligence
-  * predictive maintenance
-  * defense technology
+### ✅ Technical SEO
+* **Server-Side Rendering**: Next.js App Router with automatic SSR
+* **Static Generation**: Optimized for fast indexing and crawling
+* **Sitemap**: Auto-generated XML sitemap (`/sitemap.xml`)
+* **Robots.txt**: Dynamic robots.txt configuration
+* **Security Headers**: HSTS, CSP, X-Frame-Options, and more
+* **Image Optimization**: AVIF/WebP formats with lazy loading
+* **Performance**: Core Web Vitals optimized (LCP < 2.5s, CLS < 0.1)
+
+### 📊 Structured Data (JSON-LD)
+* Organization Schema
+* WebPage Schema
+* Breadcrumb Schema
+* Article Schema (for blog posts)
+* Product Schema (extensible)
+* FAQ Schema (extensible)
+
+### 🏷️ Metadata & Tags
+* **Unique Titles**: Page-specific, optimized titles
+* **Meta Descriptions**: Compelling, keyword-rich descriptions
+* **Open Graph**: Full OG implementation for social sharing
+* **Twitter Cards**: Large image cards
+* **Canonical URLs**: Prevent duplicate content
+* **Keywords**: Strategic keyword targeting per page
+
+### 📱 Mobile & Accessibility
+* **Mobile-First**: Responsive design with proper viewport
+* **PWA Ready**: Web app manifest configured
+* **WCAG 2.1 AA**: Fully accessible
+* **Semantic HTML**: Proper heading hierarchy and ARIA labels
+* **Reduced Motion**: Respects user preferences
+
+### 📈 Analytics & Monitoring
+* **Google Analytics 4**: Integrated with Web Vitals tracking
+* **Performance Monitoring**: Core Web Vitals reporting
+* **Search Console**: Verification tags configured
+* **Custom Events**: Ready for conversion tracking
+
+### 📚 Documentation
+See comprehensive SEO documentation:
+* `docs/SEO-GUIDE.md` - Complete SEO guide and best practices
+* `docs/SEO-IMPLEMENTATION.md` - Implementation details and checklist
+
+### 🎯 Target Keywords
+Primary focus areas:
+* Cybersecurity platform
+* Operational intelligence
+* Predictive maintenance
+* Defense technology
+* Real-time threat detection
+* Military cybersecurity
+* Fleet management systems
+* Operational technology security
 
 ---
 

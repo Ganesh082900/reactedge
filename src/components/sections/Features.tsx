@@ -24,15 +24,15 @@ export default function Feature() {
     const extendedFeatures = [...FEATURES, ...FEATURES, ...FEATURES];
 
     return (
-        <section className="bg-shift-cream text-shift-dark pt-20 md:pt-28 pb-16 md:pb-24 overflow-hidden">
-            <div className="px-6 md:px-12 lg:px-16">
+        <section className="bg-shift-cream text-shift-dark pt-16 md:pt-19 overflow-hidden">
+            <div className="">
                 {/* HEADER */}
-                <div className="flex justify-between items-center mb-16 md:mb-20">
+                <div className="flex justify-between items-center mb-16 px-6 md:mb-20">
                     <h2 
                         data-animate
-                        className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold fade-up tracking-tight leading-tight"
+                        className="text-4xl md:text-3xl lg:text-6xl xl:text-7xl font-semibold fade-up tracking-tight leading-tight"
                     >
-                        Operational Intelligence Solutions
+                        Operational <br /> Intelligence Solutions
                     </h2>
 
                     {/* Desktop Arrow Navigation */}

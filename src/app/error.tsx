@@ -16,16 +16,16 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0A0F1C] px-6">
+    <div className="min-h-screen flex items-center justify-center bg-shift-dark px-6">
       <div className="text-center">
-        <h1 className="text-6xl font-bold text-shift-orange mb-4">Oops!</h1>
+        <h1 className="text-6xl font-bold text-shift-blue mb-4">Oops!</h1>
         <h2 className="text-3xl font-semibold text-white mb-6">Something went wrong</h2>
-        <p className="text-lg text-gray-400 mb-8 max-w-md mx-auto">
+        <p className="text-lg text-shift-white/70 mb-8 max-w-md mx-auto">
           We apologize for the inconvenience. Please try again.
         </p>
         <button
           onClick={reset}
-          className="px-8 py-3 bg-shift-orange text-white rounded-lg hover:bg-shift-orange/90 transition-colors"
+          className="px-8 py-3 bg-shift-blue text-white rounded-lg hover:bg-shift-orange transition-all duration-300 shadow-lg"
         >
           Try Again
         </button>

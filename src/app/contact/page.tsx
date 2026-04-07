@@ -3,10 +3,21 @@
 import MainContent from "@/components/sections/MainContent";
 import ContactSection from "@/components/sections/ContactSection";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import StructuredData from '@/components/seo/StructuredData';
+import { generateWebPageSchema } from '@/lib/seo';
 
 export default function Contact() {
     useScrollAnimation();
+    
+    const webPageSchema = generateWebPageSchema({
+        title: 'Contact - ReActEdge',
+        description: 'Get in touch with ReActEdge for product demonstrations, partnership discussions, or to learn more about our solutions.',
+        url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://reactedge.com'}/contact`,
+    });
+    
     return (
+        <>
+        <StructuredData data={webPageSchema} />
         <div className="min-h-screen flex flex-col items-center justify-center">
             <MainContent
                 text={`Get In\nTouch.`}
@@ -55,5 +66,6 @@ export default function Contact() {
             </section>
             <div className="w-full"><ContactSection /></div>
         </div>
+        </>
     );
 }

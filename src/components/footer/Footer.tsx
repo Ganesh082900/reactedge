@@ -168,12 +168,12 @@ export default function Footer() {
 
                 {/* Info Section */}
                 <div data-animate className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 py-8 md:py-12 fade-up">
-                    <div className="flex items-start gap-3">
-                        <div className="text-2xl">🇺🇸</div>
+                    {/* <div className="flex items-start gap-3">
+                        <div className="text-2xl">🇦🇪</div>
                         <p className="text-sm md:text-base font-mono tracking-wider uppercase text-white/90">
-                            FORGED IN AMERICA. FOR AMERICA.
+                            UAE
                         </p>
-                    </div>
+                    </div> */}
                     <div className="text-sm md:text-base font-mono tracking-wider uppercase text-white/90">
                         <p>REACTEDGE HQ</p>
                         <p>1100 WILSON BLVD,</p>

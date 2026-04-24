@@ -24,9 +24,9 @@ export default function MailToSection() {
                 <h2 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.95] tracking-tight mb-6">
                     Ready to harness your{" "}
                     <span className="inline-block relative">
-                        <span className="text-shift-blue">Op</span>
+                        <span className="text-white/80">Op</span>
                         <span className="text-white/40">/</span>
-                        <span className="text-shift-blue">Intelligence</span>
+                        <span className="text-white/80">Intelligence</span>
                         <span className="text-white">?</span>
                     </span>
                 </h2>
@@ -39,7 +39,7 @@ export default function MailToSection() {
             <form data-animate onSubmit={handleSubmit} className="max-w-5xl mx-auto fade-up relative z-10">
                 <div className="flex justify-center items-center mb-14 md:mb-20">
                     <div className="flex items-center gap-4 md:gap-8 lg:gap-12 w-full max-w-5xl">
-                        <span className="text-6xl md:text-8xl lg:text-[10rem] font-light leading-none text-shift-blue">
+                        <span className="text-6xl md:text-8xl lg:text-[10rem] font-light leading-none text-white/80">
                             (
                         </span>
 
@@ -54,7 +54,7 @@ export default function MailToSection() {
                             />
                         </div>
 
-                        <span className="text-6xl md:text-8xl lg:text-[10rem] font-light leading-none text-shift-blue">
+                        <span className="text-6xl md:text-8xl lg:text-[10rem] font-light leading-none text-white/80">
                             )
                         </span>
                     </div>

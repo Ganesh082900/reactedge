@@ -89,7 +89,7 @@ export default function Hero() {
     useScrollAnimation();
 
     return (
-        <section className="min-h-screen bg-shift-orange text-shift-dark overflow-x-hidden">
+        <section className="min-h-screen bg-shift-gray text-white overflow-x-hidden">
             <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row lg:min-h-screen">
 
                 {/* ================= LEFT CONTENT ================= */}

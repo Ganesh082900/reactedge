@@ -88,7 +88,7 @@ export function generateSEO({
 
     // Open Graph
     openGraph: {
-      type: type,
+      type: type === 'product' ? 'website' : type,
       locale: 'en_US',
       url: pageUrl,
       title: pageTitle,
@@ -129,7 +129,9 @@ export function generateSEO({
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
       yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
-      bing: process.env.NEXT_PUBLIC_BING_VERIFICATION,
+      other: {
+        'msvalidate.01': [process.env.NEXT_PUBLIC_BING_VERIFICATION || ''],
+      },
     },
 
     // Category

@@ -22,7 +22,7 @@ export default function Careers() {
                     ),
                     statement: "Keeping the world's most critical systems secure.",
                     description:
-                        "Forged in America. For America. We're building the digital operating system for tomorrow's fleets.",
+                        "We're building the digital operating system for tomorrow's fleets.",
                 }}
             />
         </div>

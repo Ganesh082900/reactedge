@@ -183,11 +183,12 @@ export default function Footer() {
                 </div>
 
                 {/* Large REACTEDGE Branding */}
-                <div data-animate className="overflow-hidden my-8 md:my-12 scale-in">
-                    <h2 className="text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] font-bold tracking-tighter leading-none text-shift-blue select-none">
-                        REACTEDGE
-                    </h2>
-                </div>
+
+                <img
+                    src="/images/reactedge_logo.png"
+                    alt="REACTEDGE Logo"
+                    className="lg:h-[36vh] md:h-[26vh] w-[100vw] -ml-[6vw] -mb-[3vw] object-cover select-none"
+                />
             </div>
 
             {/* Bottom Copyright - Orange Background */}

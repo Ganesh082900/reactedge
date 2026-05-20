@@ -65,7 +65,7 @@ export default function InsightsGrid() {
     return (
         <section
             ref={sectionRef}
-            className="relative min-h-screen bg-shift-cream"
+            className="relative min-h-screen bg-shift-white"
         >
             <div className="sticky top-0 h-screen flex flex-col md:flex-row">
                 {/* LEFT FEATURED ARTICLE */}
@@ -98,7 +98,7 @@ export default function InsightsGrid() {
 
                         <Link
                             href="/insights/featured"
-                            className="btn-hover inline-block px-10 py-4 border-2 border-white/30 rounded-full text-[10px] tracking-[0.2em] uppercase hover:bg-white hover:text-black hover:border-white transition-all duration-500 w-fit font-mono shadow-lg hover:shadow-2xl"
+                            className="btn-hover inline-block px-10 py-4 border-2 border-shift-blue bg-shift-blue rounded-full text-[10px] tracking-[0.2em] uppercase hover:bg-white hover:text-shift-blue hover:border-white transition-all duration-500 w-fit font-mono shadow-lg hover:shadow-2xl"
                         >
                             READ MORE
                         </Link>
@@ -108,7 +108,7 @@ export default function InsightsGrid() {
                 {/* RIGHT SCROLLABLE GRID */}
                 <div
                     ref={rightRef}
-                    className="w-full md:w-1/2 h-1/2 md:h-full overflow-y-auto bg-shift-cream"
+                    className="w-full md:w-1/2 h-1/2 md:h-full overflow-y-auto bg-shift-white"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2">
                         {articles.map((article) => (
@@ -116,16 +116,16 @@ export default function InsightsGrid() {
                                 key={article.id}
                                 data-animate
                                 href={article.href}
-                                className="card-container group relative bg-[#E8E4DB] border border-[#D5D1C8] hover:border-shift-orange/40 p-8 md:p-10 flex flex-col justify-between min-h-[300px] md:min-h-[340px] hover:bg-white transition-all duration-500 fade-up"
+                                className="card-container group relative bg-shift-white border border-shift-gray/30 hover:border-shift-blue p-8 md:p-10 flex flex-col justify-between min-h-[300px] md:min-h-[340px] hover:bg-white transition-all duration-500 fade-up"
                             >
                                 {/* Accent Line */}
-                                <div className="absolute top-0 left-0 w-0 h-[3px] bg-shift-orange group-hover:w-full transition-all duration-700"></div>
+                                <div className="absolute top-0 left-0 w-0 h-[3px] bg-shift-blue group-hover:w-full transition-all duration-700"></div>
                                 
                                 {/* Background Gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                                 <div className="relative z-10">
-                                    <h3 className="text-lg md:text-xl font-medium leading-tight text-shift-dark mb-5 group-hover:text-shift-orange transition-all duration-400 tracking-tight">
+                                    <h3 className="text-lg md:text-xl font-medium leading-tight text-shift-dark mb-5 group-hover:text-shift-blue transition-all duration-400 tracking-tight">
                                         {article.title}
                                     </h3>
                                 </div>

@@ -2,9 +2,11 @@
 
 > **Operational Intelligence for the Modern Edge.**
 > 
-> ⚡ **Fully SEO-Optimized** | 🎯 **Core Web Vitals Ready** | 📱 **Mobile-First** | ♿ **WCAG 2.1 AA Accessible**
+> ⚡ **Fully SEO-Optimized** | 🎯 **Core Web Vitals Ready** | 📱 **Mobile-First** | ♿ **WCAG 2.1 AA Accessible** | 🎨 **Official Brand Colors**
 
-reActEdge is a high-performance, modern web application inspired by next-generation **cybersecurity and operational intelligence platforms**, designed for **defense, aerospace, rail, and fleet systems**.
+ReActEdge is a high-performance, modern web application inspired by next-generation **cybersecurity and operational intelligence platforms**, designed for **defense, aerospace, rail, and fleet systems**.
+
+Built with the official ReActEdge brand guidelines featuring **Deep Azure Blue** (#166FB4), **Signal Orange** (#F07F22), and a carefully curated accent palette for optimal visual hierarchy and accessibility.
 
 This project replicates a production-grade UI/UX system similar to leading OT (Operational Technology) platforms — delivering **real-time insights, predictive intelligence, and cyber resilience interfaces**.
 
@@ -58,30 +60,45 @@ These concepts mirror real-world OT intelligence platforms that combine **cybers
 
 # 🎨 Design System
 
-### Colors
+### Official Brand Colors
+
+Following the ReActEdge Brand Guidelines (40-30-20-10 ratio):
 
 ```css
-Primary: #0A0F1C
-Accent: #00E5A0
-Secondary: #1A1F35
-Purple: #6C63FF
-Text: #FFFFFF
-Muted: #8892A7
-Border: #2A3050
-Light: #F5F7FA
+Primary (40%):   #166FB4  /* Deep Azure Blue */
+Secondary (30%): #F07F22  /* Signal Orange */
+Accent (10%):    #F2F0E6  /* Neutral White */
+Accent (10%):    #D9F1FD  /* Ice Blue */
+Accent (10%):    #4F4E51  /* Carbon Gray */
 ```
+
+**Usage:**
+- **Deep Azure Blue**: Primary CTAs, navigation, key UI elements, interactive states
+- **Signal Orange**: Section backgrounds, emphasis, energy points, secondary CTAs
+- **Neutral White**: Card backgrounds, content areas, clean surfaces
+- **Ice Blue**: Subtle accents, hover states, informational elements
+- **Carbon Gray**: Text, borders, footer backgrounds, secondary content
 
 ### Typography
 
-* `Inter` — UI + Headings
-* `JetBrains Mono` — Data / System text
+* **Inter** — UI, headings, body copy (sans-serif)
+* **JetBrains Mono** — Data displays, code, technical text (monospace)
+
+**Font Optimization:**
+- Google Fonts with `display=swap` for optimal loading
+- Variable font weights for performance
+- Enhanced kerning and ligatures (`font-feature-settings`)
+- Letter spacing: `-0.025em` for headings, `0.08-0.2em` for mono text
 
 ### Motion System
 
-* Fade / Slide / Scale animations
-* Cursor glow interaction
-* Scroll-based reveal system
-* Smooth cinematic transitions
+* **Core Animations**: Fade-up, slide, scale-in with scroll triggers
+* **Interactive Effects**: Lift hover states (sm/md/lg), cursor glow, magnetic buttons
+* **Timing Functions**: 
+  - `ease-out`: cubic-bezier(0.22, 1, 0.36, 1)
+  - `ease-bounce`: cubic-bezier(0.34, 1.56, 0.64, 1)
+* **Performance**: GPU-accelerated transforms, will-change optimization
+* **Accessibility**: Respects `prefers-reduced-motion` for inclusive UX
 
 ---
 
@@ -137,6 +154,37 @@ src/
 * Staggered reveals
 * Smooth transitions
 * Micro-interactions
+
+---
+
+# 🎨 Brand Implementation
+
+### Official Color Palette Integration
+
+The entire project has been updated to strictly follow the **ReActEdge Brand Guidelines**:
+
+**Primary Elements (Deep Azure Blue #166FB4):**
+- Navigation buttons and interactive elements
+- Primary CTAs and links
+- Key UI components and accents
+- Hover states and active elements
+
+**Secondary Elements (Signal Orange #F07F22):**
+- Hero section backgrounds
+- Newsletter and footer highlights
+- Energy points and call-to-action sections
+- Brand emphasis areas
+
+**Supporting Colors:**
+- **Neutral White (#F2F0E6)**: Card backgrounds, content surfaces
+- **Ice Blue (#D9F1FD)**: Subtle highlights and informational accents
+- **Carbon Gray (#4F4E51)**: Footer backgrounds, borders, secondary text
+
+**Implementation:**
+- Tailwind config updated with official brand colors
+- All components refactored for consistent color usage
+- Focus states use Deep Azure Blue for accessibility
+- Maintains WCAG 2.1 AA contrast ratios
 
 ---
 

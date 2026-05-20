@@ -23,9 +23,6 @@ const nextConfig: NextConfig = {
   // Production source maps (disable for faster builds)
   productionBrowserSourceMaps: false,
 
-  // Enable SWC minification
-  swcMinify: true,
-
   // Trailing slash handling for consistent URLs
   trailingSlash: false,
 

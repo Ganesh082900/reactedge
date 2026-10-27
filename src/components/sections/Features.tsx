@@ -24,7 +24,7 @@ export default function Feature() {
     const extendedFeatures = [...FEATURES, ...FEATURES, ...FEATURES];
 
     return (
-        <section className="bg-shift-cream text-shift-dark pt-16 md:pt-19 overflow-hidden">
+        <section className="bg-shift-white text-shift-dark pt-16 md:pt-19 overflow-hidden">
             <div className="">
                 {/* HEADER */}
                 <div className="flex justify-between items-center mb-16 px-6 md:mb-20">
@@ -42,14 +42,14 @@ export default function Feature() {
                     >
                         <button
                             onClick={prev}
-                            className="w-16 h-16 bg-shift-dark text-shift-cream rounded-full hover:bg-shift-orange transition-all duration-500 flex items-center justify-center text-2xl btn-hover shadow-lg hover:shadow-2xl"
+                            className="w-16 h-16 bg-shift-blue text-white rounded-full hover:bg-shift-orange transition-all duration-500 flex items-center justify-center text-2xl btn-hover shadow-lg hover:shadow-2xl"
                             aria-label="Previous"
                         >
                             ←
                         </button>
                         <button
                             onClick={next}
-                            className="w-16 h-16 bg-shift-dark text-shift-cream rounded-full hover:bg-shift-orange transition-all duration-500 flex items-center justify-center text-2xl btn-hover shadow-lg hover:shadow-2xl"
+                            className="w-16 h-16 bg-shift-blue text-white rounded-full hover:bg-shift-orange transition-all duration-500 flex items-center justify-center text-2xl btn-hover shadow-lg hover:shadow-2xl"
                             aria-label="Next"
                         >
                             →

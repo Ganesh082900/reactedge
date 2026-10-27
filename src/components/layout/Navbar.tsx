@@ -16,6 +16,7 @@ export default function Navbar() {
                     {/* LOGO */}
                     <div className="font-bold text-xl tracking-tight">
                         <Image 
+                            // src="/images/ReActEdge_primary_logo.svg" 
                             src="/images/primary_black.svg" 
                             alt="ReActEdge Logo"
                             width={350}

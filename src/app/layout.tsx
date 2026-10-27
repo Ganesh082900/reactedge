@@ -73,7 +73,7 @@ export default function RootLayout({
         </a>
         <CursorGlow />
         <Navbar />
-        <Breadcrumbs />
+        {/* <Breadcrumbs /> */}
         <main id="main-content" role="main">{children}</main>
         <LayoutClient />
         <Footer />

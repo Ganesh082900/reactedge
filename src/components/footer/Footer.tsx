@@ -21,7 +21,7 @@ export default function Footer() {
                     <div className="flex-1 max-w-2xl">
                         <label
                             htmlFor="email_newsletter"
-                            className="block text-xs md:text-sm tracking-widest uppercase mb-3 text-shift-dark font-mono"
+                            className="block text-xs md:text-sm tracking-widest uppercase mb-3 text-white/90 font-mono font-semibold"
                         >
                             SIGN UP FOR UPDATES
                         </label>
@@ -32,12 +32,12 @@ export default function Footer() {
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            className="w-full px-0 py-2 bg-transparent border-b-2 border-shift-dark/30 text-shift-dark placeholder-shift-dark/60 focus:outline-none focus:border-shift-dark transition-colors text-xl md:text-3xl font-normal"
+                            className="w-full px-0 py-2 bg-transparent border-b-2 border-white/40 text-white placeholder-white/60 focus:outline-none focus:border-white transition-colors text-xl md:text-3xl font-light"
                         />
                     </div>
                     <button
                         type="submit"
-                        className="px-8 py-3 bg-shift-dark text-shift-orange font-bold tracking-wider hover:bg-shift-dark/90 transition-all duration-400 whitespace-nowrap rounded-full text-sm lift-sm hover:scale-105"
+                        className="px-8 py-3 bg-shift-blue text-white font-bold tracking-wider hover:bg-white hover:text-shift-blue transition-all duration-400 whitespace-nowrap rounded-full text-sm lift-sm hover:scale-105"
                     >
                         SUBSCRIBE
                     </button>
@@ -45,13 +45,13 @@ export default function Footer() {
             </div>
 
             {/* Main Footer Content - Dark Block */}
-            <div className="bg-[#2D2D2D] text-shift-orange px-6 md:px-12 lg:px-16 py-12 md:py-16">
+            <div className="bg-shift-gray text-shift-white px-6 md:px-12 lg:px-16 py-12 md:py-16">
                 {/* Navigation Grid */}
                 <div data-animate className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12 fade-up">
                     {/* Logo */}
                     <div className="md:col-span-2">
                         <Link href="/" className="inline-block">
-                            <div className="text-5xl md:text-6xl font-bold text-shift-orange hover:opacity-80 transition-opacity">
+                            <div className="text-5xl md:text-6xl font-bold text-shift-blue hover:text-shift-orange transition-all duration-300">
                                 ›
                             </div>
                         </Link>
@@ -61,7 +61,7 @@ export default function Footer() {
                     <div className="md:col-span-2">
                         <Link
                             href="/platform"
-                            className="block text-lg md:text-xl font-semibold hover:opacity-70 transition-all duration-400 hover:translate-x-1"
+                            className="block text-lg md:text-xl font-semibold text-white hover:text-shift-blue transition-all duration-400 hover:translate-x-1"
                         >
                             Platform
                         </Link>
@@ -69,15 +69,15 @@ export default function Footer() {
 
                     {/* Solutions */}
                     <div className="md:col-span-3">
-                        <h3 className="text-lg md:text-xl font-normal mb-4">
+                        <h3 className="text-lg md:text-xl font-normal mb-4 text-white">
                             Solutions<sup className="text-xs">4</sup>
                         </h3>
                         <ul className="space-y-2">
                             <li className="flex items-start gap-2">
-                                <span className="text-shift-orange/60">└</span>
+                                <span className="text-shift-blue">└</span>
                                 <Link
                                     href="/cyber-ew"
-                                    className="hover:opacity-70 transition-opacity inline-flex items-center gap-1"
+                                    className="text-white/80 hover:text-shift-blue transition-colors inline-flex items-center gap-1"
                                 >
                                     <span>Cyber</span>
                                     <span>/</span>
@@ -85,28 +85,28 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li className="flex items-start gap-2">
-                                <span className="text-shift-orange/60">└</span>
+                                <span className="text-shift-blue">└</span>
                                 <Link
                                     href="/predictive-maintenance"
-                                    className="hover:opacity-70 transition-opacity"
+                                    className="text-white/80 hover:text-shift-blue transition-colors"
                                 >
                                     Predictive Maintenance
                                 </Link>
                             </li>
                             <li className="flex items-start gap-2">
-                                <span className="text-shift-orange/60">└</span>
+                                <span className="text-shift-blue">└</span>
                                 <Link
                                     href="/compliance"
-                                    className="hover:opacity-70 transition-opacity"
+                                    className="text-white/80 hover:text-shift-blue transition-colors"
                                 >
                                     Compliance
                                 </Link>
                             </li>
                             <li className="flex items-start gap-2">
-                                <span className="text-shift-orange/60">└</span>
+                                <span className="text-shift-blue">└</span>
                                 <Link
                                     href="/research"
-                                    className="hover:opacity-70 transition-opacity"
+                                    className="text-white/80 hover:text-shift-blue transition-colors"
                                 >
                                     Research
                                 </Link>
@@ -118,24 +118,24 @@ export default function Footer() {
                     <div className="md:col-span-5">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             <div>
-                                <h3 className="text-lg md:text-xl font-normal mb-4">
+                                <h3 className="text-lg md:text-xl font-normal mb-4 text-white">
                                     About<sup className="text-xs">2</sup>
                                 </h3>
                                 <ul className="space-y-2">
                                     <li className="flex items-start gap-2">
-                                        <span className="text-shift-orange/60">└</span>
+                                        <span className="text-shift-blue">└</span>
                                         <Link
                                             href="/company"
-                                            className="hover:opacity-70 transition-opacity"
+                                            className="text-white/80 hover:text-shift-blue transition-colors"
                                         >
                                             Company
                                         </Link>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <span className="text-shift-orange/60">└</span>
+                                        <span className="text-shift-blue">└</span>
                                         <Link
                                             href="/careers"
-                                            className="hover:opacity-70 transition-opacity"
+                                            className="text-white/80 hover:text-shift-blue transition-colors"
                                         >
                                             Careers
                                         </Link>
@@ -147,7 +147,7 @@ export default function Footer() {
                                     <li>
                                         <Link
                                             href="/insights"
-                                            className="text-lg md:text-xl font-normal hover:opacity-70 transition-opacity"
+                                            className="text-lg md:text-xl font-normal text-white hover:text-shift-blue transition-colors"
                                         >
                                             Insights
                                         </Link>
@@ -155,7 +155,7 @@ export default function Footer() {
                                     <li>
                                         <Link
                                             href="/contact"
-                                            className="text-lg md:text-xl font-normal hover:opacity-70 transition-opacity"
+                                            className="text-lg md:text-xl font-normal text-white hover:text-shift-blue transition-colors"
                                         >
                                             Contact
                                         </Link>
@@ -168,13 +168,13 @@ export default function Footer() {
 
                 {/* Info Section */}
                 <div data-animate className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 py-8 md:py-12 fade-up">
-                    <div className="flex items-start gap-3">
-                        <div className="text-2xl">🇺🇸</div>
-                        <p className="text-sm md:text-base font-mono tracking-wider uppercase">
-                            FORGED IN AMERICA. FOR AMERICA.
+                    {/* <div className="flex items-start gap-3">
+                        <div className="text-2xl">🇦🇪</div>
+                        <p className="text-sm md:text-base font-mono tracking-wider uppercase text-white/90">
+                            UAE
                         </p>
-                    </div>
-                    <div className="text-sm md:text-base font-mono tracking-wider uppercase">
+                    </div> */}
+                    <div className="text-sm md:text-base font-mono tracking-wider uppercase text-white/90">
                         <p>REACTEDGE HQ</p>
                         <p>1100 WILSON BLVD,</p>
                         <p>STE 2100</p>
@@ -183,16 +183,17 @@ export default function Footer() {
                 </div>
 
                 {/* Large REACTEDGE Branding */}
-                <div data-animate className="overflow-hidden my-8 md:my-12 scale-in">
-                    <h2 className="text-[80px] md:text-[120px] lg:text-[160px] xl:text-[200px] font-bold tracking-tighter leading-none text-shift-orange select-none">
-                        REACTEDGE
-                    </h2>
-                </div>
+
+                <img
+                    src="/images/reactedge_logo.png"
+                    alt="REACTEDGE Logo"
+                    className="lg:h-[36vh] md:h-[26vh] w-[100vw] -ml-[6vw] -mb-[3vw] object-cover select-none"
+                />
             </div>
 
             {/* Bottom Copyright - Orange Background */}
             <div className="bg-shift-orange px-6 md:px-12 lg:px-16 py-6">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs md:text-sm font-mono tracking-wider uppercase text-shift-dark">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs md:text-sm font-mono tracking-wider uppercase text-white">
                     <p>©2026 REACTEDGE, INC.</p>
                     <div className="flex flex-col md:flex-row gap-3 md:gap-8">
                         <a

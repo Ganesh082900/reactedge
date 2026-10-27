@@ -1,0 +1,41 @@
+{
+  "name": "ReActEdge - Cyber & Predictive Intelligence Platform",
+  "short_name": "ReActEdge",
+  "description": "Advanced cybersecurity, predictive maintenance, and compliance solutions for defense and transportation systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0F1C",
+  "theme_color": "#006db7",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/reactedge_logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "security"],
+  "shortcuts": [
+    {
+      "name": "Platform",
+      "short_name": "Platform",
+      "description": "View our platform features",
+      "url": "/platform",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "/contact",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ]
+}

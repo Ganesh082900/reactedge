@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 // Binary Display Component with animations
 function BinaryDisplay() {
+    const [mounted, setMounted] = useState(false);
     const [binaryRows, setBinaryRows] = useState<string[]>([
         '00001100  01100011  10101110',
         '11000100  01001110  10101110',
@@ -19,8 +20,15 @@ function BinaryDisplay() {
     ]);
     const [graphHeight, setGraphHeight] = useState(78);
 
+    // Wait for component to mount before starting animations
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     // Randomly flip binary digits
     useEffect(() => {
+        if (!mounted) return;
+        
         const binaryInterval = setInterval(() => {
             setBinaryRows(prev => prev.map(row => {
                 // Split into characters, randomly flip some 0s and 1s
@@ -34,10 +42,12 @@ function BinaryDisplay() {
         }, 150); // Update every 150ms
 
         return () => clearInterval(binaryInterval);
-    }, []);
+    }, [mounted]);
 
     // Animate graph bar height - smooth continuous movement
     useEffect(() => {
+        if (!mounted) return;
+        
         const graphInterval = setInterval(() => {
             setGraphHeight(prev => {
                 // Smoothly vary between 40% and 95% with smaller, more frequent changes
@@ -48,7 +58,7 @@ function BinaryDisplay() {
         }, 200); // Update every 200ms for smoother animation
 
         return () => clearInterval(graphInterval);
-    }, []);
+    }, [mounted]);
 
     return (
         <div className="flex items-end gap-2 sm:gap-3 mt-auto pl-2 sm:pl-4 py-6 sm:py-8 border-t border-white/20">
@@ -79,7 +89,7 @@ export default function Hero() {
     useScrollAnimation();
 
     return (
-        <section className="min-h-screen bg-shift-orange text-shift-dark overflow-x-hidden">
+        <section className="min-h-screen bg-shift-gray text-white overflow-x-hidden">
             <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row lg:min-h-screen">
 
                 {/* ================= LEFT CONTENT ================= */}
@@ -131,7 +141,7 @@ export default function Hero() {
                                 href="https://reactedge.io/insights/reactedge-partners-with-anduril-armys-ngc2/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="card-container relative bg-shift-cream p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-dark/10 hover:border-shift-dark/20 flex flex-col"
+                                className="card-container relative bg-shift-white p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-gray/30 hover:border-shift-blue flex flex-col"
                             >
                                 {/* Accent Line */}
                                 <div className="absolute top-0 left-0 w-0 h-[2px] bg-shift-orange group-hover:w-full transition-all duration-700"></div>
@@ -150,7 +160,7 @@ export default function Hero() {
                                 href="https://reactedge.io/insights/reactedge-advanced-rf-enabled-gps-threat-detection/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="card-container relative bg-shift-cream p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-dark/10 hover:border-shift-dark/20 flex flex-col"
+                                className="card-container relative bg-shift-white p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-gray/30 hover:border-shift-blue flex flex-col"
                             >
                                 {/* Accent Line */}
                                 <div className="absolute top-0 left-0 w-0 h-[2px] bg-shift-orange group-hover:w-full transition-all duration-700"></div>
@@ -169,7 +179,7 @@ export default function Hero() {
                                 href="https://reactedge.io/insights/reactedge-achieves-niap-certification-for-full-drive-encryption/"
                                 target="_blank"
                                 rel="noreferrer"
-                                className="card-container relative bg-shift-cream p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-dark/10 hover:border-shift-dark/20 flex flex-col"
+                                className="card-container relative bg-shift-white p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-gray/30 hover:border-shift-blue flex flex-col"
                             >
                                 {/* Accent Line */}
                                 <div className="absolute top-0 left-0 w-0 h-[2px] bg-shift-orange group-hover:w-full transition-all duration-700"></div>
@@ -191,9 +201,9 @@ export default function Hero() {
                     {/* DESCRIPTION BOX */}
                     <div
                         data-animate
-                        className="card-container bg-shift-cream p-6 sm:p-8 lg:px-10 lg:pb-10 pt-12 lg:pt-52 fade-up transition-all duration-500"
+                        className="card-container bg-shift-white p-6 sm:p-8 lg:px-10 lg:pb-10 pt-12 lg:pt-52 fade-up transition-all duration-500 hover:border-shift-orange"
                     >
-                        <p className="w-full sm:w-3/4 text-base sm:text-lg lg:text-xl leading-relaxed font-medium tracking-tight">
+                        <p className="w-full sm:w-3/4 text-base sm:text-lg lg:text-xl leading-relaxed font-medium tracking-tight text-shift-dark">
                             Powering actionable insights for America's defense and transportation systems.
                         </p>
                     </div>
@@ -233,7 +243,7 @@ export default function Hero() {
                     <Link
                         data-animate
                         href="/platform"
-                        className="card-container group text-shift-dark p-8 sm:p-10 lg:p-12 flex flex-col items-center justify-center text-center transition-colors duration-500"
+                        className="card-container group bg-shift-blue text-white hover:bg-shift-orange p-8 sm:p-10 lg:p-12 flex flex-col items-center justify-center text-center transition-all duration-500"
                     >
                         <svg
                             className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mb-4 sm:mb-5 group-hover:translate-x-2 group-hover:-translate-y-2 transition-all duration-500"

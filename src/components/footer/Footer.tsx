@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { SITE } from "@/content/site";
+import { NAV_ITEMS, getNavCount } from "@/lib/navigation";
 
 export default function Footer() {
     useScrollAnimation();
@@ -57,112 +59,40 @@ export default function Footer() {
                         </Link>
                     </div>
 
-                    {/* Platform */}
-                    <div className="md:col-span-2">
-                        <Link
-                            href="/platform"
-                            className="block text-lg md:text-xl font-semibold text-white hover:text-shift-blue transition-all duration-400 hover:translate-x-1"
-                        >
-                            Platform
-                        </Link>
-                    </div>
-
-                    {/* Solutions */}
-                    <div className="md:col-span-3">
-                        <h3 className="text-lg md:text-xl font-normal mb-4 text-white">
-                            Solutions<sup className="text-xs">4</sup>
-                        </h3>
-                        <ul className="space-y-2">
-                            <li className="flex items-start gap-2">
-                                <span className="text-shift-blue">└</span>
-                                <Link
-                                    href="/cyber-ew"
-                                    className="text-white/80 hover:text-shift-blue transition-colors inline-flex items-center gap-1"
-                                >
-                                    <span>Cyber</span>
-                                    <span>/</span>
-                                    <span>EW</span>
-                                </Link>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="text-shift-blue">└</span>
-                                <Link
-                                    href="/predictive-maintenance"
-                                    className="text-white/80 hover:text-shift-blue transition-colors"
-                                >
-                                    Predictive Maintenance
-                                </Link>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="text-shift-blue">└</span>
-                                <Link
-                                    href="/compliance"
-                                    className="text-white/80 hover:text-shift-blue transition-colors"
-                                >
-                                    Compliance
-                                </Link>
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="text-shift-blue">└</span>
-                                <Link
-                                    href="/research"
-                                    className="text-white/80 hover:text-shift-blue transition-colors"
-                                >
-                                    Research
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* About + Other Links */}
-                    <div className="md:col-span-5">
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                            <div>
-                                <h3 className="text-lg md:text-xl font-normal mb-4 text-white">
-                                    About<sup className="text-xs">2</sup>
-                                </h3>
-                                <ul className="space-y-2">
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-shift-blue">└</span>
-                                        <Link
-                                            href="/company"
-                                            className="text-white/80 hover:text-shift-blue transition-colors"
-                                        >
-                                            Company
-                                        </Link>
-                                    </li>
-                                    <li className="flex items-start gap-2">
-                                        <span className="text-shift-blue">└</span>
-                                        <Link
-                                            href="/careers"
-                                            className="text-white/80 hover:text-shift-blue transition-colors"
-                                        >
-                                            Careers
-                                        </Link>
-                                    </li>
-                                </ul>
+                    {/* Nav (shared with the navbar) */}
+                    <div className="md:col-span-10 grid grid-cols-2 lg:grid-cols-3 gap-8">
+                        {NAV_ITEMS.map((item) => (
+                            <div key={item.title}>
+                                {item.children ? (
+                                    <>
+                                        <h3 className="text-lg md:text-xl font-normal mb-4 text-white">
+                                            {item.title}
+                                            <sup className="text-xs ml-1">{getNavCount(item)}</sup>
+                                        </h3>
+                                        <ul className="space-y-2">
+                                            {item.children.map((child) => (
+                                                <li key={child.href} className="flex items-start gap-2">
+                                                    <span className="text-shift-blue">+</span>
+                                                    <Link
+                                                        href={child.href}
+                                                        className="text-white/80 hover:text-shift-blue transition-colors"
+                                                    >
+                                                        {child.title}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </>
+                                ) : (
+                                    <Link
+                                        href={item.href ?? "/"}
+                                        className="block text-lg md:text-xl font-normal text-white hover:text-shift-blue transition-all duration-400 hover:translate-x-1"
+                                    >
+                                        {item.title}
+                                    </Link>
+                                )}
                             </div>
-                            <div>
-                                <ul className="space-y-3">
-                                    <li>
-                                        <Link
-                                            href="/insights"
-                                            className="text-lg md:text-xl font-normal text-white hover:text-shift-blue transition-colors"
-                                        >
-                                            Insights
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
-                                            href="/contact"
-                                            className="text-lg md:text-xl font-normal text-white hover:text-shift-blue transition-colors"
-                                        >
-                                            Contact
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
 
@@ -175,10 +105,18 @@ export default function Footer() {
                         </p>
                     </div> */}
                     <div className="text-sm md:text-base font-mono tracking-wider uppercase text-white/90">
-                        <p>REACTEDGE HQ</p>
-                        <p>1100 WILSON BLVD,</p>
-                        <p>STE 2100</p>
-                        <p>ROSSLYN, VA 22209</p>
+                        <p>{SITE.name} Global HQ</p>
+                        {SITE.contact.address.map((line) => (
+                            <p key={line}>{line}</p>
+                        ))}
+                        <p>{SITE.contact.regions}</p>
+                    </div>
+                    <div className="text-sm md:text-base font-mono tracking-wider text-white/90 space-y-2">
+                        <p className="uppercase">{SITE.footerTagline}</p>
+                        <p>{SITE.contact.phone}</p>
+                        <a href={`mailto:${SITE.contact.email}`} className="hover:text-shift-blue transition-colors">
+                            {SITE.contact.email}
+                        </a>
                     </div>
                 </div>
 
@@ -194,16 +132,11 @@ export default function Footer() {
             {/* Bottom Copyright - Orange Background */}
             <div className="bg-shift-orange px-6 md:px-12 lg:px-16 py-6">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs md:text-sm font-mono tracking-wider uppercase text-white">
-                    <p>©2026 REACTEDGE, INC.</p>
+                    <p>©{SITE.year} {SITE.legalName.toUpperCase()}</p>
                     <div className="flex flex-col md:flex-row gap-3 md:gap-8">
-                        <a
-                            href="#"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="hover:opacity-70 transition-opacity"
-                        >
+                        <Link href="/license" className="hover:opacity-70 transition-opacity">
                             LICENSE AGREEMENT
-                        </a>
+                        </Link>
                         <Link
                             href="/privacy-policy"
                             className="hover:opacity-70 transition-opacity"

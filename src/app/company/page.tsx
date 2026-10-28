@@ -3,6 +3,9 @@
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import StructuredData from '@/components/seo/StructuredData';
 import { generateWebPageSchema } from '@/lib/seo';
+import { INSIGHTS } from '@/content/site';
+
+const ABOUT = INSIGHTS.find((i) => i.body)?.body?.about;
 
 export default function Company() {
     useScrollAnimation();
@@ -16,9 +19,12 @@ export default function Company() {
     return (
         <>
         <StructuredData data={webPageSchema} />
-        <div className="min-h-screen flex items-center justify-center">
-            <h1 data-animate className="text-4xl font-bold fade-up">Company</h1>
-        </div>
+        <section className="min-h-screen bg-[#EDEDED] text-[#0A0F1C]">
+            <div className="max-w-3xl mx-auto px-6 pt-40 pb-24">
+                <h1 data-animate className="text-5xl md:text-7xl font-bold tracking-tight fade-up">Company</h1>
+                <p className="mt-10 text-lg leading-relaxed">{ABOUT}</p>
+            </div>
+        </section>
         </>
     );
 }

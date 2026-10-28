@@ -1,7 +1,8 @@
+import { SOLUTIONS_SECTION } from "@/content/site";
+
 export interface NavItem {
     title: string;
     href?: string;
-    count?: number;
     children?: {
         title: string;
         href: string;
@@ -15,17 +16,13 @@ export const NAV_ITEMS: NavItem[] = [
     },
     {
         title: "Solutions",
-        count: 4,
-        children: [
-            { title: "Cyber / EW", href: "/solutions/cyber" },
-            { title: "Predictive Maintenance", href: "/solutions/predictive" },
-            { title: "Compliance", href: "/solutions/compliance" },
-            { title: "Research", href: "/solutions/research" },
-        ],
+        children: SOLUTIONS_SECTION.cards.map((s) => ({
+            title: s.short,
+            href: `/solutions/${s.slug}`,
+        })),
     },
     {
         title: "About",
-        count: 2,
         children: [
             { title: "Company", href: "/company" },
             { title: "Careers", href: "/careers" },
@@ -39,4 +36,13 @@ export const NAV_ITEMS: NavItem[] = [
         title: "Contact",
         href: "/contact",
     },
+    {
+        title: "Legal",
+        children: [
+            { title: "Privacy Policy", href: "/privacy-policy" },
+            { title: "Terms of Use", href: "/terms-of-use" },
+            { title: "License", href: "/license" },
+        ],
+    },
 ];
+export const getNavCount = (item: NavItem) => item.children?.length ?? 0;

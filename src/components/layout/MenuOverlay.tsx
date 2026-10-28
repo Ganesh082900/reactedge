@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { NAV_ITEMS } from "@/lib/navigation";
+import { useEffect, useState } from "react";
+import { NAV_ITEMS, getNavCount } from "@/lib/navigation";
 import Link from "next/link";
 import useMenuAnimation from "@/hooks/useMenuAnimation";
 
@@ -21,6 +21,23 @@ export default function MenuOverlay({
         setActiveIndex(activeIndex === index ? null : index);
     };
 
+    useEffect(() => {
+        if (!open) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
+                setActiveIndex(null);
+                setOpen(false);
+            }
+        };
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        window.addEventListener("keydown", onKey);
+        return () => {
+            document.body.style.overflow = prev;
+            window.removeEventListener("keydown", onKey);
+        };
+    }, [open, setOpen]);
+
     const handleClose = () => {
         setActiveIndex(null);
         setOpen(false);
@@ -39,13 +56,12 @@ export default function MenuOverlay({
 
             {/* PANEL */}
             <div
-                className={`absolute right-0 top-0 h-[calc(100vh-80px)] 
-        w-full md:w-[520px] bg-[#F5F7FA] text-black p-10
-        transform transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
-        ${open ? "translate-x-0 scale-100" : "translate-x-full scale-95"}`}
+                className={`absolute right-0  max-h-[calc(100dvh-7rem)] flex flex-col overflow-hidden w-[calc(100%-1rem)] md:w-[480px] rounded-l-xl shadow-2xl bg-[#F5F7FA] text-black p-6 sm:p-8
+        transform transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]
+        ${open ? "translate-x-0 scale-100" : "translate-x-full scale-95 origin-right"}`}
             >
                 {/* CLOSE */}
-                <div className="flex justify-end mb-12">
+                <div className="flex justify-end mb-6 sm:mb-8 shrink-0">
                     <button
                         onClick={handleClose}
                         className="text-xs uppercase tracking-[0.2em]"
@@ -55,7 +71,7 @@ export default function MenuOverlay({
                 </div>
 
                 {/* NAV */}
-                <nav className="space-y-10">
+                <nav className="flex-1 min-h-0 overflow-y-auto overflow-x-hidden overscroll-contain [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden space-y-5 sm:space-y-6 pb-2">
                     {NAV_ITEMS.map((item, index) => {
                         const isOpen = activeIndex === index;
 
@@ -71,16 +87,16 @@ export default function MenuOverlay({
                                     }
                                     className="flex justify-between items-center cursor-pointer"
                                 >
-                                    <div className="text-5xl font-semibold tracking-tight">
+                                    <div className="text-4xl sm:text-5xl font-semibold tracking-tight">
                                         {item.href && !item.children ? (
                                             <Link href={item.href}>{item.title}</Link>
                                         ) : (
                                             <span>{item.title}</span>
                                         )}
 
-                                        {item.count && (
+                                        {getNavCount(item) > 0 && (
                                             <sup className="text-base opacity-50 ml-1">
-                                                {item.count}
+                                                {getNavCount(item)}
                                             </sup>
                                         )}
                                     </div>
@@ -98,11 +114,10 @@ export default function MenuOverlay({
 
                                 {/* CHILDREN */}
                                 <div
-                                    className={`overflow-hidden transition-all duration-500 ${isOpen ? "max-h-96 mt-6" : "max-h-0"
-                                        }`}
+                                    className={`grid transition-[grid-template-rows,margin] duration-500 ${isOpen ? "grid-rows-[1fr] mt-5" : "grid-rows-[0fr]"}`}
                                 >
                                     {item.children && (
-                                        <ul className="space-y-4 text-lg">
+                                        <ul className="space-y-4 text-lg overflow-hidden min-h-0">
                                             {item.children.map((child, i) => (
                                                 <li key={i}>
                                                     <Link

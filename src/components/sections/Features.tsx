@@ -2,9 +2,11 @@
 
 import { useState, useRef } from "react";
 import FeatureCard from "../molecules/FeatureCard";
-import { FEATURES } from "@/lib/featureData";
+import { SOLUTIONS_SECTION } from "@/content/site";
 import FeatureVisual from "../atoms/FeatureVisual";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+
+const FEATURES = SOLUTIONS_SECTION.cards;
 
 export default function Feature() {
     useScrollAnimation();
@@ -32,7 +34,7 @@ export default function Feature() {
                         data-animate
                         className="text-4xl md:text-3xl lg:text-6xl xl:text-7xl font-semibold fade-up tracking-tight leading-tight"
                     >
-                        Operational <br /> Intelligence Solutions
+                        {SOLUTIONS_SECTION.heading[0]} <br /> {SOLUTIONS_SECTION.heading[1]}
                     </h2>
 
                     {/* Desktop Arrow Navigation */}
@@ -76,7 +78,7 @@ export default function Feature() {
                                         title={item.title}
                                         desc={item.desc}
                                         image={<FeatureVisual type={item.image} />}
-                                        link={item.link}
+                                        link={`/solutions/${item.slug}`}
                                     />
                                 </div>
                             ))}
@@ -98,7 +100,7 @@ export default function Feature() {
                                     title={item.title}
                                     desc={item.desc}
                                     image={<FeatureVisual type={item.image} />}
-                                    link={item.link}
+                                    link={`/solutions/${item.slug}`}
                                 />
                             </div>
                         ))}

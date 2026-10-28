@@ -3,6 +3,7 @@
 import Link from "next/link";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
+import { HERO, STATUS_STYLES } from "@/content/site";
 
 // Binary Display Component with animations
 function BinaryDisplay() {
@@ -103,7 +104,7 @@ export default function Hero() {
                                 data-animate
                                 className="text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed max-w-md lg:max-w-sm xl:max-w-md fade-up font-medium tracking-tight mb-4 lg:mb-0 lg:ml-auto"
                             >
-                                Operational Intelligence for Every Vehicle, Every Fleet, Every Mission.
+                                {HERO.eyebrow}
                             </p>
 
                             {/* LARGE TITLE - LEFT */}
@@ -111,9 +112,11 @@ export default function Hero() {
                                 data-animate
                                 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[12rem] font-bold leading-[0.85] tracking-[-0.04em] break-words fade-up"
                             >
-                                Op<span className="text-shift-dark/30 font-light">/</span>
-                                <br />
-                                Intelligence
+                                {HERO.titleLines.map((line) => (
+                                    <span key={line} className="block">
+                                        {line}
+                                    </span>
+                                ))}
                             </h1>
                         </div>
 
@@ -135,62 +138,23 @@ export default function Hero() {
 
                         {/* NEWS CARDS */}
                         <div className="grid grid-cols-1 md:grid-cols-3 flex-grow">
-                            {/* Card 1 */}
-                            <Link
-                                data-animate
-                                href="https://reactedge.io/insights/reactedge-partners-with-anduril-armys-ngc2/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="card-container relative bg-shift-white p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-gray/30 hover:border-shift-blue flex flex-col"
-                            >
-                                {/* Accent Line */}
-                                <div className="absolute top-0 left-0 w-0 h-[2px] bg-shift-orange group-hover:w-full transition-all duration-700"></div>
+                            {HERO.ticker.map((item) => (
+                                <Link
+                                    key={item.title}
+                                    data-animate
+                                    href="/insights"
+                                    className="card-container relative bg-shift-white p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-gray/30 hover:border-shift-blue flex flex-col"
+                                >
+                                    <div className="absolute top-0 left-0 w-0 h-[2px] bg-shift-orange group-hover:w-full transition-all duration-700"></div>
 
-                                <h2 className="text-base sm:text-lg lg:text-xl font-medium mb-3 lg:mb-4 leading-tight tracking-tight group-hover:text-shift-orange transition-colors duration-400">
-                                    ReActEdge Partners with Anduril on Army's Next Generation Command and Control Initiative
-                                </h2>
-                                <p className="text-[10px] lg:text-xs text-shift-dark/60 uppercase tracking-wider font-mono leading-relaxed group-hover:text-shift-dark/80 transition-colors duration-400">
-                                    Operational Intelligence Platform Integrates with Lattice Mesh to Deliver Near Real-Time Vehicle Health Data for Enhanced Mission Readiness
-                                </p>
-                            </Link>
-
-                            {/* Card 2 */}
-                            <Link
-                                data-animate
-                                href="https://reactedge.io/insights/reactedge-advanced-rf-enabled-gps-threat-detection/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="card-container relative bg-shift-white p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-gray/30 hover:border-shift-blue flex flex-col"
-                            >
-                                {/* Accent Line */}
-                                <div className="absolute top-0 left-0 w-0 h-[2px] bg-shift-orange group-hover:w-full transition-all duration-700"></div>
-
-                                <h2 className="text-base sm:text-lg lg:text-xl font-medium mb-3 lg:mb-4 leading-tight tracking-tight group-hover:text-shift-orange transition-colors duration-400">
-                                    ReActEdge Launches Advanced RF-Enabled GPS Threat Detection
-                                </h2>
-                                <p className="text-[10px] lg:text-xs text-shift-dark/60 uppercase tracking-wider font-mono leading-relaxed group-hover:text-shift-dark/80 transition-colors duration-400">
-                                    Next-generation capability delivers early warning of GPS threats up to 200 nautical miles away with plug-and-play deployment
-                                </p>
-                            </Link>
-
-                            {/* Card 3 */}
-                            <Link
-                                data-animate
-                                href="https://reactedge.io/insights/reactedge-achieves-niap-certification-for-full-drive-encryption/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="card-container relative bg-shift-white p-6 lg:p-8 min-h-[280px] sm:min-h-[300px] lg:min-h-[320px] hover:bg-white transition-all duration-500 group fade-up border border-shift-gray/30 hover:border-shift-blue flex flex-col"
-                            >
-                                {/* Accent Line */}
-                                <div className="absolute top-0 left-0 w-0 h-[2px] bg-shift-orange group-hover:w-full transition-all duration-700"></div>
-
-                                <h2 className="text-base sm:text-lg lg:text-xl font-medium mb-3 lg:mb-4 leading-tight tracking-tight group-hover:text-shift-orange transition-colors duration-400">
-                                    ReActEdge Achieves NIAP Certification for Full Encryption, Enabling Secure Deployment in Classified Environments
-                                </h2>
-                                <p className="text-[10px] lg:text-xs text-shift-dark/60 uppercase tracking-wider font-mono leading-relaxed group-hover:text-shift-dark/80 transition-colors duration-400">
-                                    First and only provider in its class to receive certification for devices capable of handling classified data at rest
-                                </p>
-                            </Link>
+                                    <h2 className="text-base sm:text-lg lg:text-xl font-medium mb-3 lg:mb-4 leading-tight tracking-tight group-hover:text-shift-orange transition-colors duration-400">
+                                        {item.title}
+                                    </h2>
+                                    <p className="text-[10px] lg:text-xs text-shift-dark/60 uppercase tracking-wider font-mono leading-relaxed group-hover:text-shift-dark/80 transition-colors duration-400">
+                                        {item.description}
+                                    </p>
+                                </Link>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -204,7 +168,7 @@ export default function Hero() {
                         className="card-container bg-shift-white p-6 sm:p-8 lg:px-10 lg:pb-10 pt-12 lg:pt-52 fade-up transition-all duration-500 hover:border-shift-orange"
                     >
                         <p className="w-full sm:w-3/4 text-base sm:text-lg lg:text-xl leading-relaxed font-medium tracking-tight text-shift-dark">
-                            Powering actionable insights for America's defense and transportation systems.
+                            {HERO.sidebarStatement}
                         </p>
                     </div>
 
@@ -216,21 +180,13 @@ export default function Hero() {
                         <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 sm:mb-6 tracking-tight">System Status</h3>
 
                         <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8 font-mono text-xs sm:text-sm">
-                            {[
-                                '01. GPS',
-                                '02. Radar',
-                                '03. Engines',
-                                '04. Electrical',
-                                '05. Fuel',
-                                '06. Electronic Warfare',
-                                '07. Countermeasures',
-                                '08. Environmental',
-                                '09. Communications',
-                                '10. Flight Data Links'
-                            ].map((item, i) => (
-                                <li key={i} className="flex items-center justify-between">
-                                    <span className="opacity-90">{item}</span>
-                                    <div className="w-2 h-2 rounded-full bg-white"></div>
+                            {HERO.systemStatus.map((item) => (
+                                <li key={item.label} className="flex items-center justify-between gap-3">
+                                    <span className="opacity-90">{item.label}</span>
+                                    <span className="flex items-center gap-2 text-[10px] tracking-wider opacity-80">
+                                        {item.level}
+                                        <span className={`w-2 h-2 rounded-full ${STATUS_STYLES[item.level]}`} />
+                                    </span>
                                 </li>
                             ))}
                         </ul>
@@ -254,7 +210,7 @@ export default function Hero() {
                             <path d="M471.88,601.96l-74.25-74.25v85.18h-35.82v-146.34h124.26c15.23,0,27.58,12.35,27.58,27.58v30.97h-35.69v-22.73h-55l64.5,64.5c6.72,6.72,15.84,10.5,25.35,10.5h.59v35.82h-14.37c-10.18,0-19.95-4.04-27.15-11.24Z" />
                         </svg>
                         <p className="text-sm sm:text-base lg:text-xl font-normal">
-                            Explore<br />the platform.
+                            {HERO.ctaLabel[0]}<br />{HERO.ctaLabel[1]}
                         </p>
                     </Link>
                 </aside>

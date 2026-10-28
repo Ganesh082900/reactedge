@@ -5,6 +5,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import StructuredData from '@/components/seo/StructuredData';
 import { generateWebPageSchema } from '@/lib/seo';
+import { SITE } from '@/content/site';
 
 export default function Contact() {
     useScrollAnimation();
@@ -38,9 +39,9 @@ export default function Contact() {
                             <polygon points="50,40 60,60 40,60" />
                         </svg>
                     ),
-                    statement: "Ready To Learn More About ReActEdge?",
+                    statement: "Get in touch to secure your systems.",
                     description:
-                        "REACTEDGE ENABLES SMARTER, FASTER DECISIONS THROUGH REAL-TIME DATA ACCESS, CONTEXTUAL INSIGHTS, AND ACTIONABLE ANALYTICS AT THE EDGE FOR COMMERCIAL AVIATION, RAIL, AND DEFENSE.",
+                        `${SITE.contact.phone} | ${SITE.contact.email}`.toUpperCase(),
                 }}
             />
             <section className="relative w-full bg-[#0A0F1C] text-white py-24 px-6 overflow-hidden">

@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import CursorGlow from "@/components/effects/CursorGlow";
 import Footer from "@/components/footer/Footer";
+import PageLoader from "@/components/layout/PageLoader";
 import LayoutClient from "@/components/layout/LayoutClient";
 import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import StructuredData from "@/components/seo/StructuredData";
@@ -68,6 +69,7 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
+        <PageLoader />
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-shift-orange focus:text-white focus:rounded">
           Skip to main content
         </a>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Hamburger from "./Hamburger";
 import MenuOverlay from "./MenuOverlay";
 
@@ -14,7 +15,7 @@ export default function Navbar() {
                 <div className="mx-auto px-6 flex justify-between items-center h-[80px]">
 
                     {/* LOGO */}
-                    <div className="font-bold text-xl tracking-tight">
+                    <Link href="/" onClick={() => setOpen(false)} aria-label="ReActEdge home" className="font-bold text-xl tracking-tight">
                         <Image 
                             // src="/images/ReActEdge_primary_logo.svg" 
                             src="/images/primary_black.svg" 
@@ -22,7 +23,7 @@ export default function Navbar() {
                             width={350}
                             height={40}
                         />
-                    </div>
+                    </Link>
 
                     {/* MENU */}
                     <button

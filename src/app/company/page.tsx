@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import StructuredData from '@/components/seo/StructuredData';
 import { generateWebPageSchema } from '@/lib/seo';
-import { INSIGHTS } from '@/content/site';
+import { INSIGHT } from '@/content/site';
 
-const ABOUT = INSIGHTS.find((i) => i.body)?.body?.about;
+const ABOUT = INSIGHT.body.about;
 
 export default function Company() {
     useScrollAnimation();

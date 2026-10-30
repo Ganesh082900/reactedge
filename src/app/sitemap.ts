@@ -1,5 +1,5 @@
-import { MetadataRoute } from 'next';
-import { INSIGHTS, SOLUTIONS_SECTION } from '@/content/site';
+﻿import { MetadataRoute } from 'next';
+import { SOLUTIONS_SECTION } from '@/content/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://reactedge.com';
@@ -9,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '', '/platform', '/company', '/careers', '/insights', '/contact',
     '/privacy-policy', '/terms-of-use', '/license',
     ...SOLUTIONS_SECTION.cards.map((s) => `/solutions/${s.slug}`),
-    ...INSIGHTS.map((i) => `/insights/${i.slug}`),
   ].map(
     (route) => ({
       url: `${baseUrl}${route}`,
@@ -31,3 +30,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...routes];
 }
+

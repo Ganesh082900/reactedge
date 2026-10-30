@@ -1,4 +1,4 @@
-// Single source of truth for copy scraped from https://reactedge-rosy.vercel.app/
+﻿// Single source of truth for copy scraped from https://reactedge-rosy.vercel.app/
 
 export type StatusLevel =
     | "NORMAL"
@@ -103,7 +103,9 @@ export const SOLUTIONS_SECTION = {
 
 export const PLATFORM = {
     hero: {
-        text: "Every\nSystem.",
+        eyebrow: "Powered and protected by\nReal-Time Threat Intelligence.",
+        text: "Every",
+        rotatingWords: ["System.", "Network.", "Environment."],
         statement: "Mission-First Mindset, Relentless Innovation, Data-Driven Precision",
         description:
             "We're not just protecting today's systems that power economies and defend nations — we're building the resilient security layer for tomorrow's critical infrastructure.",
@@ -113,6 +115,8 @@ export const PLATFORM = {
     features: [
         {
             title: "Passive Intake",
+            symbol: "P",
+            cardTitle: "PASSIVE INTAKE",
             items: [
                 "Zero Operational Disruption",
                 "Optical Diode Isolation",
@@ -123,6 +127,8 @@ export const PLATFORM = {
         },
         {
             title: "SWaP-C Compact",
+            symbol: "S",
+            cardTitle: "SWaP-C COMPACT",
             items: [
                 "Ultra Low Power (<15W)",
                 "Rugged Form Factor",
@@ -133,6 +139,8 @@ export const PLATFORM = {
         },
         {
             title: "Full Data Capture",
+            symbol: "C",
+            cardTitle: "FULL DATA CAPTURE",
             items: [
                 "100% Raw Bus Ingestion",
                 "Lossless High-Speed Ingest",
@@ -143,6 +151,8 @@ export const PLATFORM = {
         },
         {
             title: "Proactive Defense",
+            symbol: "D",
+            cardTitle: "PROACTIVE DEFENSE",
             items: [
                 "Real-Time AI Threat Engine",
                 "Sub-Millisecond Alerting",
@@ -186,18 +196,24 @@ export const PLATFORM = {
     products: [
         {
             name: "Manifold 4",
+            label: "Manifold 4",
+            image: "/images/platform/2.png",
             tagline: "Empower your mission with critical insights.",
             description:
                 "Manifold 4 is a small and lightweight data collection device that easily slots into all air, ground, and maritime platforms. The Manifold 4 ingests data from up to 4 different serial bus protocols simultaneously with at-rest encryption for bolstered security. Additional capabilities include near real-time alert streaming for platform operators and ground control stations and a ruggedized design to survive harsh environmental conditions.",
         },
         {
             name: "Manifold 10",
+            label: "Manifold 10",
+            image: "/images/platform/image41.png",
             tagline: "Maximize your data collection capabilities.",
             description:
                 "Manifold 10 is a variant of the Manifold 4 designed for commercial aviation to manage higher data capacity. The Manifold 10 ingests data for up to 110 channels for a variety of serial bus protocols, including ARINC 429, ARINC 717, ARINC 664, and gigabit ethernet.",
         },
         {
             name: "Bus Interface Card",
+            label: "ReActEdge BIC",
+            image: "/images/platform/21.png",
             tagline: "Navigate complexity with confidence.",
             description:
                 "The Bus Interface Card (BIC) inserts into Manifold 4 and Manifold 10 devices to enable full data capture across all serial bus protocols. The BIC is custom designed to deliver full visibility into serial bus activity down to the physical layer to uncover anomalies in bus traffic and indicators of hardwire degradation. The BIC supports data capture on up to 12 channels for a variety of serial bus protocols, including CAN, MIL-STD-1553, and ARINC 429.",
@@ -206,39 +222,42 @@ export const PLATFORM = {
     resources: [
         {
             title: "ReActEdge Announces AS9100 Certification",
+            image: "/images/platform/ima.png",
             description:
                 "An internationally recognized standard for quality management designed for the aerospace, defense, and aviation industries",
         },
         {
             title: "ReActEdge Introduces Breakthrough Multi-Protocol Bus Interface Card (BIC) for Modern and Legacy Transportation and Defense Platforms",
+            video: "/images/platform/A-cinematic.mp4",
             description:
                 "Instant Data Capture, Device Fingerprinting, and First-of-Its-Kind Malformed Message Detection and Capture Enable Unmatched Diagnostic Capabilities for Cybersecurity and Maintenance Teams",
         },
         {
             title: "ReActEdge Announces Manifold 10 for Defense and Commercial Aircraft",
+            image: "/images/platform/img.png",
             description:
                 "Progress Toward FAA Certification to Equip Operators and Maintainers of Bombardier and Boeing Aircraft with Real-Time Insights Derived from Onboard Serial Data",
         },
     ],
 };
 
+export interface InsightBody {
+    dateline: string;
+    subtitle: string;
+    paragraphs: string[];
+    quotes: { text: string; author: string }[];
+    about: string;
+    related: { title: string; description: string }[];
+}
+
 export interface Insight {
-    slug: string;
     title: string;
     date: string;
     description: string;
-    featured?: boolean;
-    body?: {
-        dateline: string;
-        subtitle: string;
-        paragraphs: string[];
-        quotes: { text: string; author: string }[];
-        about: string;
-        related: { title: string; description: string }[];
-    };
+    body: InsightBody;
 }
 
-const PARTNERSHIP_BODY: NonNullable<Insight["body"]> = {
+const ARTICLE_BODY: InsightBody = {
     dateline: "ARLINGTON, VA — February 23, 2026",
     subtitle:
         "Security Platform Integrates with Monitoring Networks to Deliver Real-Time Threat Data for Enhanced Operational Resilience",
@@ -270,106 +289,38 @@ const PARTNERSHIP_BODY: NonNullable<Insight["body"]> = {
     ],
 };
 
-export const INSIGHTS: Insight[] = [
-    {
-        slug: "reactedge-deployed-to-secure-critical-energy-infrastructure-networks",
-        title: "ReActEdge Deployed to Secure Critical Energy & Infrastructure Networks",
-        date: "February 10, 2026",
-        description:
-            "Flagship deployment demonstrates real-time threat detection and automated resilient response across operational technology networks.",
-        featured: true,
-    },
-    {
-        slug: "reactedge-partners-with-industry-leaders-on-critical-infrastructure-protection",
-        title: "ReActEdge Partners with Industry Leaders on Next-Generation Critical Infrastructure Protection Initiative",
-        date: "February 23, 2026",
-        description:
-            "Security Platform Integrates with Monitoring Networks to Deliver Real-Time Threat Data for Enhanced Operational Resilience",
-        body: PARTNERSHIP_BODY,
-    },
-    {
-        slug: "reactedge-strengthens-leadership-team",
-        title: "ReActEdge Strengthens Leadership Team to Accelerate OT Security Growth",
-        date: "January 26, 2026",
-        description:
-            "New executive appointment reinforces ReActEdge's commitment to scaling real-time operational technology protection.",
-    },
-    {
-        slug: "near-real-time-data-powers-faster-fault-and-threat-detection",
-        title: "Near-Real-Time Data Powers Faster Fault and Threat Detection",
-        date: "January 21, 2026",
-        description:
-            "ReActEdge's adaptive monitoring identifies faults and intrusions across critical infrastructure at mission speed.",
-    },
-    {
-        slug: "early-warning-for-grid-anomalies",
-        title: "Delivering Early-Warning for Grid Anomalies with ReActEdge's Real-Time Threat Detection",
-        date: "January 16, 2026",
-        description:
-            "ReActEdge built a real-time detection method to rapidly identify early warning indicators of infrastructure anomalies, providing earlier visibility into emerging risks for increased awareness and safety.",
-    },
-    {
-        slug: "advanced-threat-detection-for-industrial-control-systems",
-        title: "ReActEdge Launches Advanced Threat Detection for Industrial Control Systems",
-        date: "January 7, 2026",
-        description:
-            "Next-generation capability delivers early warning of OT threats across industrial environments with rapid, plug-and-play deployment",
-    },
-    {
-        slug: "named-emerging-leader-in-critical-infrastructure-cybersecurity",
-        title: "ReActEdge Named Emerging Leader in Critical Infrastructure Cybersecurity",
-        date: "December 23, 2025",
-        description:
-            "Analyst recognition highlights ReActEdge's leadership in transforming hidden operational risk into actionable, real-time insight.",
-    },
-    {
-        slug: "securing-mission-critical-data-with-certified-protection-framework",
-        title: "Securing Mission-Critical Data with ReActEdge's Certified Protection Framework",
-        date: "December 9, 2025",
-        description:
-            "In the era of software-defined infrastructure and defense, sensitive data generated by national and industrial systems is a strategic asset that must be safeguarded against adversary exploitation.",
-    },
-    {
-        slug: "forging-a-resilient-future-for-national-infrastructure",
-        title: "Forging a Resilient Future for National Infrastructure",
-        date: "November 21, 2025",
-        description:
-            "Critical infrastructure stands as a cornerstone of innovation and economic strength - yet it continues to face escalating cybersecurity challenges.",
-    },
-    {
-        slug: "advances-toward-certification-for-classified-environments",
-        title: "ReActEdge Advances Toward Certification for Secure Deployment in Classified Environments",
-        date: "November 20, 2025",
-        description:
-            "ReActEdge is working to meet the highest standards for handling sensitive data at rest across mission-critical national and industrial environments",
-    },
-    {
-        slug: "detecting-cyber-attacks-on-ot-networks",
-        title: "Detecting Cyber Attacks on OT Networks with ReActEdge's Real-Time Detection Suite",
-        date: "October 31, 2025",
-        description:
-            "ReActEdge has built a real-time detection suite to equip industrial and defense platforms to rapidly detect and respond to sophisticated network-level attacks.",
-    },
-    {
-        slug: "reactedge-raises-funding-to-scale-security-platform",
-        title: "ReActEdge Raises Funding to Scale Its Resilient Security Platform",
-        date: "September 3, 2025",
-        description:
-            "Investment to accelerate deployment of technology that gives security, operations, and compliance teams real-time visibility into infrastructure performance and risk",
-    },
-    {
-        slug: "partners-to-deliver-integrated-threat-detection-for-critical-systems",
-        title: "ReActEdge Partners to Deliver Integrated Threat Detection for Critical Systems",
-        date: "June 26, 2025",
-        description:
-            "The announcement comes as threats to operational and infrastructure networks continue to rise worldwide, reinforcing the need for real-time, proactive defense",
-    },
-];
 
-export const getInsight = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
-export const FEATURED_INSIGHT = INSIGHTS.find((i) => i.featured) ?? INSIGHTS[0];
-export const INSIGHT_LIST = INSIGHTS.filter((i) => i.slug !== FEATURED_INSIGHT.slug);
+export const INSIGHT: Insight = {
+    title: "ReActEdge Partners with Industry Leaders on Next-Generation Critical Infrastructure Protection Initiative",
+    date: "February 23, 2026",
+    description:
+        "Security Platform Integrates with Monitoring Networks to Deliver Real-Time Threat Data for Enhanced Operational Resilience",
+    body: ARTICLE_BODY,
+};
 
+export const INSIGHTS_PAGE = {
+    bannerTitle: "ReAct/Insights",
+    bannerImage: "/images/insights/img.png",
+    articleImages: ["/images/insights/ReActEdge-02-01.jpg", "/images/insights/ReActEdge-01-01.png"],
+    relatedImages: [
+        "/images/insights/logo.png",
+        "/images/insights/logo1.png",
+        "/images/insights/ima.png",
+        "/images/insights/img3.png",
+        "/images/insights/business_card_animated.gif",
+        "/images/insights/logo3.png",
+        "/images/insights/logo4.png",
+        "/images/insights/logo5.png",
+    ],
+    additionalReadingTitle: "Additional Reading",
+    additionalReading: [
+        { theme: "theme-mint", quote: "We worked with the ReActEdge team over a several month project on a complete critical infrastructure overhaul, that included new telemetry, AI protection, and code resilience.", brand: "⁘⁘ ReActEdge", tag: "OT Protection" },
+        { theme: "theme-white", quote: "ReActEdge completed a comprehensive security deployment of our critical platform. The quality of the team's work exceeded our expectations, delivering 100% operational resilience.", brand: "zelt", tag: "Edge", suffix: ".app" },
+        { theme: "theme-white", quote: "ReActEdge was engaged in developing our critical infrastructure monitoring system. Their efforts were highly satisfactory, and we were impressed with their speed and precision.", brand: "Potion", tag: "Cyber Threat" },
+        { theme: "theme-mint", quote: "I'd like to extend a heartfelt gratitude to the ReActEdge team for their exceptional support throughout the edge security rollout. Your responsiveness has been invaluable.", brand: "ESPOOT", tag: "Infrastructure" },
+        { theme: "theme-white-accent", quote: "We had a great experience working with ReActEdge on our industrial cybersecurity project. Their team brought a strong mix of creativity, technical skill and strategic thinking.", brand: "SCA", tag: "Defense Hub" },
+    ],
+};
 export const CASE_QUOTES = [
     {
         quote: "We worked with the ReActEdge team over a several month project on a complete critical infrastructure overhaul, that included new telemetry, AI protection, and code resilience.",
@@ -392,3 +343,7 @@ export const CASE_QUOTES = [
         tag: "Infrastructure",
     },
 ];
+
+
+
+

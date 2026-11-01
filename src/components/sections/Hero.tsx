@@ -52,16 +52,16 @@ function BinaryDisplay() {
     }, []);
 
     return (
-        <div className="flex items-end gap-2 sm:gap-3 mt-auto pl-2 sm:pl-4 py-6 sm:py-8 border-t border-white/20">
+        <div className="flex items-end gap-2 sm:gap-3 mt-auto pl-2 sm:pl-4 py-6 sm:py-8 border-t border-shift-ice/20">
             {/* Graph Bar */}
             <div className="flex flex-col items-center gap-1">
-                <div className="w-[0.3rem] sm:w-[0.4rem] h-20 sm:h-24 bg-white/30 relative overflow-hidden">
+                <div className="w-[0.3rem] sm:w-[0.4rem] h-20 sm:h-24 bg-shift-ice/30 relative overflow-hidden">
                     <div
-                        className="absolute bottom-0 left-0 w-full bg-white/60 transition-all duration-300 ease-out"
+                        className="absolute bottom-0 left-0 w-full bg-shift-ice/60 transition-all duration-300 ease-out"
                         style={{ height: `${graphHeight}%` }}
                     ></div>
                 </div>
-                <div className="w-1.5 sm:w-2 h-0.5 sm:h-1 bg-white/50"></div>
+                <div className="w-1.5 sm:w-2 h-0.5 sm:h-1 bg-shift-ice/50"></div>
             </div>
 
             {/* Binary Code */}
@@ -80,21 +80,21 @@ export default function Hero() {
     useScrollAnimation();
 
     return (
-        <section className="min-h-screen bg-shift-gray text-white overflow-x-hidden">
+        <section className="min-h-screen bg-shift-white text-shift-dark overflow-x-hidden">
             <div className="max-w-[1920px] mx-auto flex flex-col lg:grid lg:grid-cols-[minmax(0,1fr)_380px] xl:grid-cols-[minmax(0,1fr)_420px] lg:grid-rows-[1fr_auto] lg:min-h-screen">
 
                 {/* ================= LEFT CONTENT ================= */}
                 <div className="flex-1 flex flex-col overflow-hidden lg:contents">
                     <div className="flex-1 flex flex-col lg:contents">
 
-                        <div className="pt-52 flex flex-col overflow-hidden lg:col-start-1 lg:row-start-1">
+                        <div className="flex flex-col overflow-hidden lg:col-start-1 lg:row-start-1">
 
                         {/* HERO BLOCK */}
-                        <div className="flex flex-col overflow-hidden pb-6 lg:pb-8 relative px-6">
+                        <div className="flex flex-col overflow-hidden pt-52 pb-6 lg:pb-8 relative px-6 bg-shift-blue text-shift-white">
                             {/* DESCRIPTION - TOP RIGHT */}
                             <p
                                 data-animate
-                                className="text-base sm:text-lg lg:text-xl xl:text-2xl leading-relaxed max-w-md lg:max-w-sm xl:max-w-md fade-up font-medium tracking-tight mb-4 lg:mb-0 lg:ml-auto"
+                                className="text-base sm:text-lg lg:text-xl xl:text-2xl leading-snug max-w-[16rem] sm:max-w-xs xl:max-w-sm fade-up font-medium tracking-tight mb-6 lg:mb-0 lg:absolute lg:top-52 lg:left-[66%]"
                             >
                                 {HERO.eyebrow}
                             </p>
@@ -102,20 +102,21 @@ export default function Hero() {
                             {/* LARGE TITLE - LEFT */}
                             <h1
                                 data-animate
-                                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl 2xl:text-[12rem] font-bold leading-[0.85] tracking-[-0.04em] break-words fade-up"
+                                className="text-6xl sm:text-8xl md:text-9xl lg:text-[9rem] xl:text-[11rem] 2xl:text-[13rem] font-bold uppercase leading-[0.9] tracking-[-0.04em] fade-up"
                             >
-                                {HERO.titleLines.map((line) => (
-                                    <span key={line} className="block">
-                                        {line}
-                                    </span>
-                                ))}
+                                <span className="block">Stay</span>
+                                <span className="block">Ahead</span>
+                                <span className="block">
+                                    of <span className="text-shift-orange">Every</span>
+                                </span>
+                                <span className="block text-shift-orange">Threat.</span>
                             </h1>
                         </div>
 
                         {/* VIDEO */}
                         <div
                             data-animate
-                            className="card-container relative aspect-video lg:aspect-[2/1] overflow-hidden bg-black scale-in shadow-2xl"
+                            className="card-container relative aspect-video lg:aspect-[2/1] overflow-hidden bg-shift-white scale-in shadow-2xl"
                         >
                             <video
                                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
@@ -160,7 +161,7 @@ export default function Hero() {
                     {/* DESCRIPTION BOX */}
                     <div
                         data-animate
-                        className="card-container bg-shift-white p-6 sm:p-8 lg:px-10 lg:pb-10 pt-12 lg:pt-52 fade-up transition-all duration-500 hover:border-shift-orange"
+                        className="card-container bg-shift-ice p-6 sm:p-8 lg:px-10 lg:pb-10 pt-12 lg:pt-52 fade-up transition-all duration-500 hover:border-shift-orange"
                     >
                         <p className="w-full sm:w-3/4 text-base sm:text-lg lg:text-xl leading-relaxed font-medium tracking-tight text-shift-dark">
                             {HERO.sidebarStatement}
@@ -170,7 +171,7 @@ export default function Hero() {
                     {/* SYSTEM STATUS */}
                     <div
                         data-animate
-                        className="card-container bg-shift-dark text-white p-6 sm:p-8 lg:px-10 py-12 sm:py-16 lg:py-20 flex flex-col flex-grow fade-up transition-all duration-500"
+                        className="card-container bg-shift-gray text-shift-ice p-6 sm:p-8 lg:px-10 py-12 sm:py-16 lg:py-20 flex flex-col flex-grow fade-up transition-all duration-500"
                     >
                         <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4 sm:mb-6 tracking-tight">System Status</h3>
 

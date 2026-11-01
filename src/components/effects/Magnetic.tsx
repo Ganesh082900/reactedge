@@ -1,5 +1,3 @@
-// components/effects/Magnetic.tsx
-
 "use client";
 
 import { useRef, type MouseEvent, type ReactNode } from "react";

@@ -1,5 +1,3 @@
-export const metadata = { title: "Privacy Policy" };
-
 const EMAIL = "info@ReActEdge.io";
 
 type Block = { p?: string; list?: string[]; h3?: string };

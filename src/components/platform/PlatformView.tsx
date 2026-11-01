@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { Fragment, useEffect, useRef, useState } from "react";
 import Link from "next/link";
@@ -219,7 +219,7 @@ export default function PlatformView() {
                             <h2 className="hiw-title">{howItWorks.heading}</h2>
                             <div className="hiw-logo">
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src="/images/platform/ReActEdge-01-01.png" alt="ReActEdge Logo" className="hiw-logo-img" />
+                                <img src="/images/platform/logo-mark.png" alt="ReActEdge Logo" className="hiw-logo-img" />
                             </div>
                             <p className="hiw-counter">
                                 <span className="hiw-counter-current">{String(activeRing + 1).padStart(2, "0")}</span>

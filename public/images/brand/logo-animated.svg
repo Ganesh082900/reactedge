@@ -15,7 +15,7 @@ svg {
 }
 
 .cls-1, .cls-2, .cls-3, .cls-4 {
-  stroke-linecap: round;
+  stroke-linecap: butt;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
 }

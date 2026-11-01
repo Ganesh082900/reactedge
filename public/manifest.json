@@ -15,7 +15,7 @@
       "purpose": "any"
     },
     {
-      "src": "/images/reactedge_logo.png",
+      "src": "/images/brand/logo-og.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -27,15 +27,13 @@
       "name": "Platform",
       "short_name": "Platform",
       "description": "View our platform features",
-      "url": "/platform",
-      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+      "url": "/platform"
     },
     {
       "name": "Contact",
       "short_name": "Contact",
       "description": "Get in touch",
-      "url": "/contact",
-      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+      "url": "/contact"
     }
   ]
 }

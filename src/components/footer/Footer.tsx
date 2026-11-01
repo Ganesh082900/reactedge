@@ -41,11 +41,11 @@ export default function Footer() {
                         <div className="space-y-4">
                             <Link href="/" className="inline-block" aria-label={SITE.name}>
                                 <Image
-                                    src="/images/primary_black.svg"
+                                    src="/images/brand/logo-primary.svg"
                                     alt="ReActEdge Logo"
                                     width={1626}
                                     height={1080}
-                                    className="h-auto w-80 max-w-none -ml-10 -my-16 brightness-0 invert"
+                                    className="h-auto w-80 max-w-none -ml-[75px] -my-16 brightness-0 invert"
                                 />
                             </Link>
                             <p className="text-sm text-white/60 max-w-xs">{SITE.tagline}</p>

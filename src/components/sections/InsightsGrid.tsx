@@ -1,9 +1,8 @@
-﻿"use client";
+"use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { INSIGHT } from "@/content/site";
-import { useState, useEffect } from "react";
 
 export default function InsightsGrid() {
     const ref = useRef<HTMLElement>(null);
@@ -79,5 +78,3 @@ export default function InsightsGrid() {
         </section>
     );
 }
-
-

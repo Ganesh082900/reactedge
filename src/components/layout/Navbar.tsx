@@ -17,8 +17,8 @@ export default function Navbar() {
                     {/* LOGO */}
                     <Link href="/" onClick={() => setOpen(false)} aria-label="ReActEdge home" className="font-bold text-xl tracking-tight">
                         <Image 
-                            // src="/images/ReActEdge_primary_logo.svg" 
-                            src="/images/primary_black.svg" 
+                             
+                            src="/images/brand/logo-primary.svg" 
                             alt="ReActEdge Logo"
                             width={350}
                             height={40}

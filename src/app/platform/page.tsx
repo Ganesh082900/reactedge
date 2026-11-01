@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { PLATFORM } from "@/content/site";
 import PlatformView from "@/components/platform/PlatformView";
 

@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import FeatureCard from "../molecules/FeatureCard";
 import { SOLUTIONS_SECTION } from "@/content/site";
 import FeatureVisual from "../atoms/FeatureVisual";
+import AnimatedHeading from "../atoms/AnimatedHeading";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const FEATURES = SOLUTIONS_SECTION.cards;
@@ -30,12 +31,11 @@ export default function Feature() {
             <div className="">
                 {/* HEADER */}
                 <div className="flex justify-between items-center mb-16 px-6 md:mb-20">
-                    <h2 
-                        data-animate
-                        className="text-4xl md:text-3xl lg:text-6xl xl:text-7xl font-semibold fade-up tracking-tight leading-tight"
-                    >
-                        {SOLUTIONS_SECTION.heading[0]} <br /> {SOLUTIONS_SECTION.heading[1]}
-                    </h2>
+                    <AnimatedHeading
+                        text={SOLUTIONS_SECTION.heading}
+                        mode="lines"
+                        className="text-4xl md:text-3xl lg:text-6xl xl:text-7xl font-semibold tracking-tight leading-tight"
+                    />
 
                     {/* Desktop Arrow Navigation */}
                     <div 

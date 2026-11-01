@@ -1,4 +1,4 @@
-﻿import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next';
 import { SOLUTIONS_SECTION } from '@/content/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {

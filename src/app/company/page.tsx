@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import StructuredData from '@/components/seo/StructuredData';

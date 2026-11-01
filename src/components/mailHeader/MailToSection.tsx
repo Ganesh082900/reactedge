@@ -63,13 +63,12 @@ export default function MailToSection() {
                 </span>
 
                 <div className="grid w-full grid-cols-1 items-center gap-8 rounded-[2rem] bg-black p-4 shadow-2xl md:grid-cols-[1fr_1.4fr] md:gap-12 md:p-6">
-                    <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-shift-orange via-[#f9a24d] to-[#c4540f]">
-                        <div className="absolute h-3/4 w-3/4 rounded-full bg-white/25 blur-2xl" />
+                    <div className="relative aspect-square overflow-hidden rounded-2xl">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                            src="/images/ReActEdge_primary_logo.svg"
-                            alt={`${SITE.name} logo`}
-                            className="relative w-4/5 h-auto"
+                            src="/images/cta/get-in-touch-console.svg"
+                            alt="ReActEdge live OT intelligence console"
+                            className="h-full w-full object-cover"
                         />
                     </div>
 

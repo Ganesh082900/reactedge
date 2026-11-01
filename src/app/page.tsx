@@ -7,6 +7,7 @@ import StructuredData from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = generateSEO({
   title: 'Home',
+  url: '/',
   description: 'Discover ReActEdge\'s advanced cybersecurity and predictive intelligence platform. Protecting defense and transportation systems with cutting-edge technology.',
   keywords: [
     'cybersecurity platform',

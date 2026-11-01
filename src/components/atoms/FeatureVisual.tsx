@@ -2,9 +2,10 @@
 import Image from "next/image";
 
 const VISUALS: Record<string, string> = {
-    radial: "/images/feature-img-11.svg",
-    sphere: "/images/feature-img-12.svg",
-    dots: "/images/feature-img-13.svg",
+    radial: "/images/features/radial.svg",
+    sphere: "/images/features/sphere.svg",
+    dots: "/images/features/dots.svg",
+    atom: "/images/features/atom.svg",
 };
 
 export default function FeatureVisual({ type }: { type: string }) {

@@ -4,8 +4,14 @@
  * Performance utilities for optimizing Core Web Vitals
  */
 
+interface WebVitalMetric {
+  id: string;
+  name: string;
+  value: number;
+}
+
 // Report Web Vitals to analytics
-export function reportWebVitals(metric: any) {
+export function reportWebVitals(metric: WebVitalMetric) {
   // Log to console in development
   if (process.env.NODE_ENV === 'development') {
     console.log(metric);
@@ -45,8 +51,9 @@ export function lazyLoadImages(selector = 'img[data-src]') {
   if (!('IntersectionObserver' in window)) {
     // Fallback for browsers that don't support IntersectionObserver
     const images = document.querySelectorAll(selector);
-    images.forEach((img: any) => {
-      img.src = img.dataset.src;
+    images.forEach((node) => {
+      const img = node as HTMLImageElement;
+      img.src = img.dataset.src ?? img.src;
     });
     return;
   }
@@ -99,6 +106,6 @@ export function addResourceHints() {
 
 declare global {
   interface Window {
-    gtag: (...args: any[]) => void;
+    gtag: (...args: unknown[]) => void;
   }
 }

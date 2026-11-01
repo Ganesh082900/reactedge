@@ -1,4 +1,4 @@
-﻿export default function GlobeIcon() {
+export default function GlobeIcon() {
     return (
         <svg role="presentation" fill="none" stroke="currentColor" viewBox="0 0 480 360">
             <g stroke="currentColor" clipPath="url(#platformGlobeClip)">

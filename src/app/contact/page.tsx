@@ -1,5 +1,6 @@
 "use client";
 
+import AnimatedHeading from "@/components/atoms/AnimatedHeading";
 import MainContent from "@/components/sections/MainContent";
 import ContactSection from "@/components/sections/ContactSection";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
@@ -22,8 +23,8 @@ export default function Contact() {
         <div className="min-h-screen flex flex-col items-center justify-center">
             <MainContent
                 text={`Get In\nTouch.`}
-                bgColor="#EDEDED"
-                textColor="#0A0F1C"
+                bgColor="#F2F0E6"
+                textColor="#0A0A0F"
                 rightContent={{
                     icon: (
                         <svg
@@ -31,7 +32,7 @@ export default function Contact() {
                             height="48"
                             viewBox="0 0 100 100"
                             fill="none"
-                            stroke="#0A0F1C"
+                            stroke="#0A0A0F"
                             strokeWidth="1.2"
                         >
                             <polygon points="50,10 90,80 10,80" />
@@ -44,26 +45,15 @@ export default function Contact() {
                         `${SITE.contact.phone} | ${SITE.contact.email}`.toUpperCase(),
                 }}
             />
-            <section className="relative w-full bg-[#0A0F1C] text-white py-24 px-6 overflow-hidden">
-
-                {/* TOP BORDER */}
-                <div className="absolute top-0 left-0 w-full h-px bg-white/20" />
-
-                {/* CONTENT */}
-                <div data-animate className="max-w-[1280px] mx-auto fade-up">
-                    <p className="text-[clamp(28px,4vw,64px)] leading-[1.1] font-semibold tracking-[-0.02em] text-white/80">
-                        Whether you're interested in learning more about our solutions,
-                        product demonstrations, partnership discussions, or joining our team,
-                        we'd be happy to help.
-                    </p>
+            <section className="relative w-full bg-shift-cream text-shift-dark pt-8 pb-24 px-6 overflow-hidden">
+                <div className="max-w-[1280px] mx-auto">
+                    <AnimatedHeading
+                        as="p"
+                        mode="words"
+                        text="Whether you're interested in learning more about our solutions, product demonstrations, partnership discussions, or joining our team, we'd be happy to help."
+                        className="text-[clamp(28px,4vw,64px)] leading-[1.1] font-bold tracking-[-0.02em] text-shift-dark"
+                    />
                 </div>
-
-                {/* BACKGROUND GLOW */}
-                <div className="pointer-events-none absolute inset-0 -z-10">
-                    <div className="absolute w-[600px] h-[600px] bg-[#00E5A0]/10 rounded-full blur-[120px] top-[-100px] left-[-100px]" />
-                    <div className="absolute w-[600px] h-[600px] bg-[#6C63FF]/10 rounded-full blur-[120px] bottom-[-100px] right-[-100px]" />
-                </div>
-
             </section>
             <div className="w-full"><ContactSection /></div>
         </div>

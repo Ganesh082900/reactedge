@@ -7,8 +7,8 @@ export default function useParallax() {
         const handleScroll = () => {
             const y = window.scrollY;
 
-            document.querySelectorAll("[data-parallax]").forEach((el: any) => {
-                const speed = el.dataset.parallax || 0.2;
+            document.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
+                const speed = Number(el.dataset.parallax) || 0.2;
                 el.style.transform = `translateY(${y * speed}px)`;
             });
         };

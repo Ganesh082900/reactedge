@@ -1,4 +1,4 @@
-﻿// Single source of truth for copy scraped from https://reactedge-rosy.vercel.app/
+// Single source of truth for copy scraped from https://reactedge-rosy.vercel.app/
 
 export type StatusLevel =
     | "NORMAL"

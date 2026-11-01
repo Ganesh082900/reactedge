@@ -18,8 +18,8 @@ module.exports = {
         'shift-cream': '#F2F0E6',        // Same as shift-white
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-        mono: ['var(--font-jetbrains-mono)', 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', 'monospace'],
+        sans: ['var(--font-plex-sans)', 'IBM Plex Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['var(--font-plex-mono)', 'IBM Plex Mono', 'Consolas', 'Monaco', 'monospace'],
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

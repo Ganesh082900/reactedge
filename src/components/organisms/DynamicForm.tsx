@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import Input from "@/components/atoms/Input";
 import { TextArea } from "@/components/atoms/TextArea";
 import Button from "@/components/atoms/Button";
@@ -17,11 +17,11 @@ export default function DynamicForm({
     onSubmit,
 }: {
     fields: Field[];
-    onSubmit: (data: any) => Promise<void>;
+    onSubmit: (data: Record<string, string>) => Promise<void>;
 }) {
     const [formData, setFormData] = useState<Record<string, string>>({});
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData((prev) => ({
             ...prev,
             [e.target.name]: e.target.value,
@@ -58,7 +58,7 @@ export default function DynamicForm({
             })}
 
             {/* CHECKBOX */}
-            <div className="flex items-center gap-3 text-xs tracking-widest uppercase text-white/60">
+            <div className="flex items-center gap-3 text-xs tracking-widest uppercase text-shift-gray">
                 <input type="checkbox" />
                 <span>I am a human</span>
             </div>
@@ -66,9 +66,9 @@ export default function DynamicForm({
             {/* SUBMIT */}
             <Button
                 label="Submit"
-                bg="#EDEDED"
-                textColor="#000"
-                borderColor="#EDEDED"
+                bg="#166FB4"
+                textColor="#F2F0E6"
+                borderColor="#166FB4"
                 onClick={handleSubmit}
             />
         </div>

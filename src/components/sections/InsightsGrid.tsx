@@ -2,96 +2,81 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
-import { FEATURED_INSIGHT, INSIGHT_LIST } from "@/content/site";
-
+import { INSIGHT } from "@/content/site";
 
 export default function InsightsGrid() {
-    useScrollAnimation();
-    const rightRef = useRef<HTMLDivElement>(null);
-    const sectionRef = useRef<HTMLDivElement>(null);
+    const ref = useRef<HTMLElement>(null);
+    const [inView, setInView] = useState(false);
+
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        const io = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setInView(true);
+                    io.disconnect();
+                }
+            },
+            { threshold: 0.3 }
+        );
+        io.observe(el);
+        return () => io.disconnect();
+    }, []);
 
     return (
         <section
-            ref={sectionRef}
-            className="relative min-h-screen bg-shift-white"
+            ref={ref}
+            className="relative min-h-screen bg-shift-white text-shift-dark overflow-hidden flex items-center"
         >
-            <div className="sticky top-0 h-screen flex flex-col md:flex-row">
-                {/* LEFT FEATURED ARTICLE */}
-                <div 
-                    data-animate
-                    className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden group fade-up"
-                >
-                    {/* Background Image */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/90 transition-all duration-700 group-hover:from-black/40 group-hover:to-black/80">
+            <style>{`
+                @keyframes ig-from-left { from { opacity: 0; transform: translateX(-80px); } to { opacity: 1; transform: none; } }
+                @keyframes ig-from-right { from { opacity: 0; transform: translateX(80px); } to { opacity: 1; transform: none; } }
+                @keyframes ig-from-bottom { from { opacity: 0; transform: translateY(60px); } to { opacity: 1; transform: none; } }
+                .ig-img, .ig-text > * { opacity: 0; }
+                .ig-in .ig-img { animation: ig-from-left 1s cubic-bezier(.22,1,.36,1) both; }
+                .ig-in .ig-text > * { animation: ig-from-right 1s cubic-bezier(.22,1,.36,1) both; }
+                .ig-in .ig-text > *:nth-child(1) { animation-delay: .4s; }
+                .ig-in .ig-text > *:nth-child(2) { animation-delay: .55s; }
+                .ig-in .ig-text > *:nth-child(3) { animation-delay: .7s; }
+                .ig-in .ig-text > .ig-btns { animation-name: ig-from-bottom; animation-delay: 1s; }
+                @media (prefers-reduced-motion: reduce) { .ig-img, .ig-text > * { opacity: 1; animation: none !important; } }
+            `}</style>
+            <div className={`${inView ? "ig-in" : ""} w-full px-6 py-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center`}>
+                <div className="ig-img max-w-[640px] w-full mx-auto aspect-[690/750]">
+                    {/* Mounted on scroll so the SVG's own animation starts when it becomes visible */}
+                    {inView && (
+                        // eslint-disable-next-line @next/next/no-img-element
                         <img
-                            src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1200&q=80"
-                            alt={FEATURED_INSIGHT.title}
-                            className="w-full h-full object-cover opacity-70 transition-all duration-700 group-hover:scale-105 group-hover:opacity-80"
+                            src="/images/home/platform-overview.svg"
+                            alt={INSIGHT.title}
+                            className="w-full h-auto"
                         />
-                    </div>
+                    )}
+                </div>
 
-                    {/* Content */}
-                    <div className="relative h-full flex flex-col justify-end p-10 md:p-14 lg:p-20 text-white">
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight mb-8 tracking-tight transition-transform duration-500 group-hover:translate-x-2">
-                            {FEATURED_INSIGHT.title}
-                        </h2>
-
-                        <p className="text-[10px] md:text-xs font-mono tracking-[0.15em] mb-5 opacity-70 uppercase group-hover:opacity-90 transition-opacity duration-400">
-                            {FEATURED_INSIGHT.date}
-                        </p>
-
-                        <p className="text-base md:text-lg mb-10 max-w-2xl opacity-80 leading-relaxed group-hover:opacity-100 transition-opacity duration-400 font-light">
-                            {FEATURED_INSIGHT.description}
-                        </p>
-
+                <div className="ig-text">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight tracking-tight">
+                        {INSIGHT.title}
+                    </h2>
+                    <p className="mt-6 text-[10px] md:text-xs font-mono tracking-[0.15em] opacity-70 uppercase">
+                        {INSIGHT.date}
+                    </p>
+                    <p className="mt-6 text-base md:text-lg max-w-2xl opacity-80 leading-relaxed font-light">
+                        {INSIGHT.description}
+                    </p>
+                    <div className="ig-btns mt-10">
                         <Link
-                            href={`/insights/${FEATURED_INSIGHT.slug}`}
+                            href="/insights"
                             className="btn-hover inline-block px-10 py-4 border-2 border-shift-blue bg-shift-blue rounded-full text-[10px] tracking-[0.2em] uppercase hover:bg-white hover:text-shift-blue hover:border-white transition-all duration-500 w-fit font-mono shadow-lg hover:shadow-2xl"
                         >
                             READ MORE
                         </Link>
                     </div>
                 </div>
-
-                {/* RIGHT SCROLLABLE GRID */}
-                <div
-                    ref={rightRef}
-                    className="w-full md:w-1/2 h-1/2 md:h-full overflow-y-auto bg-shift-white"
-                >
-                    <div className="grid grid-cols-1 md:grid-cols-2">
-                        {INSIGHT_LIST.map((article) => (
-                            <Link
-                                key={article.slug}
-                                data-animate
-                                href={`/insights/${article.slug}`}
-                                className="card-container group relative bg-shift-white border border-shift-gray/30 hover:border-shift-blue p-8 md:p-10 flex flex-col justify-between min-h-[300px] md:min-h-[340px] hover:bg-white transition-all duration-500 fade-up"
-                            >
-                                {/* Accent Line */}
-                                <div className="absolute top-0 left-0 w-0 h-[3px] bg-shift-blue group-hover:w-full transition-all duration-700"></div>
-                                
-                                {/* Background Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-white/0 to-white/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-                                <div className="relative z-10">
-                                    <h3 className="text-lg md:text-xl font-medium leading-tight text-shift-dark mb-5 group-hover:text-shift-blue transition-all duration-400 tracking-tight">
-                                        {article.title}
-                                    </h3>
-                                </div>
-
-                                <div className="relative z-10">
-                                    <p className="text-[10px] font-mono tracking-[0.12em] text-shift-dark/50 mb-4 group-hover:text-shift-dark/70 transition-colors duration-400">
-                                        {article.date.toUpperCase()}
-                                    </p>
-                                    <p className="text-[10px] font-mono tracking-[0.08em] text-shift-dark/60 leading-relaxed uppercase group-hover:text-shift-dark/80 transition-colors duration-400">
-                                        {article.description}
-                                    </p>
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                </div>
             </div>
         </section>
     );
 }
+
+

@@ -1,4 +1,3 @@
-// components/atoms/FeatureVisual.tsx
 import Image from "next/image";
 
 const VISUALS: Record<string, string> = {

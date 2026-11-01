@@ -1,5 +1,3 @@
-// lib/performance.ts
-
 /**
  * Performance utilities for optimizing Core Web Vitals
  */

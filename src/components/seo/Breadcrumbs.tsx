@@ -1,4 +1,3 @@
-// components/seo/Breadcrumbs.tsx
 'use client';
 
 import Link from 'next/link';

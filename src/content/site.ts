@@ -97,7 +97,7 @@ export const SOLUTIONS_SECTION = {
             short: "Advanced Technologies",
             title: "Advanced Technologies",
             desc: "Preparing organizations for emerging threat landscapes through AI-driven security environments and quantum-era security readiness — ensuring long-term resilience against next-generation risks.",
-            image: "radial",        },
+            image: "atom",        },
     ],
 };
 
@@ -197,7 +197,7 @@ export const PLATFORM = {
         {
             name: "Manifold 4",
             label: "Manifold 4",
-            image: "/images/platform/2.png",
+            image: "/images/platform/manifold-4.png",
             tagline: "Empower your mission with critical insights.",
             description:
                 "Manifold 4 is a small and lightweight data collection device that easily slots into all air, ground, and maritime platforms. The Manifold 4 ingests data from up to 4 different serial bus protocols simultaneously with at-rest encryption for bolstered security. Additional capabilities include near real-time alert streaming for platform operators and ground control stations and a ruggedized design to survive harsh environmental conditions.",
@@ -205,7 +205,7 @@ export const PLATFORM = {
         {
             name: "Manifold 10",
             label: "Manifold 10",
-            image: "/images/platform/image41.png",
+            image: "/images/platform/manifold-10.png",
             tagline: "Maximize your data collection capabilities.",
             description:
                 "Manifold 10 is a variant of the Manifold 4 designed for commercial aviation to manage higher data capacity. The Manifold 10 ingests data for up to 110 channels for a variety of serial bus protocols, including ARINC 429, ARINC 717, ARINC 664, and gigabit ethernet.",
@@ -213,7 +213,7 @@ export const PLATFORM = {
         {
             name: "Bus Interface Card",
             label: "ReActEdge BIC",
-            image: "/images/platform/21.png",
+            image: "/images/platform/bus-interface-card.png",
             tagline: "Navigate complexity with confidence.",
             description:
                 "The Bus Interface Card (BIC) inserts into Manifold 4 and Manifold 10 devices to enable full data capture across all serial bus protocols. The BIC is custom designed to deliver full visibility into serial bus activity down to the physical layer to uncover anomalies in bus traffic and indicators of hardwire degradation. The BIC supports data capture on up to 12 channels for a variety of serial bus protocols, including CAN, MIL-STD-1553, and ARINC 429.",
@@ -222,19 +222,19 @@ export const PLATFORM = {
     resources: [
         {
             title: "ReActEdge Announces AS9100 Certification",
-            image: "/images/platform/ima.png",
+            image: "/images/platform/as9100-certification.png",
             description:
                 "An internationally recognized standard for quality management designed for the aerospace, defense, and aviation industries",
         },
         {
             title: "ReActEdge Introduces Breakthrough Multi-Protocol Bus Interface Card (BIC) for Modern and Legacy Transportation and Defense Platforms",
-            video: "/images/platform/A-cinematic.mp4",
+            video: "/images/platform/bic-announcement.mp4",
             description:
                 "Instant Data Capture, Device Fingerprinting, and First-of-Its-Kind Malformed Message Detection and Capture Enable Unmatched Diagnostic Capabilities for Cybersecurity and Maintenance Teams",
         },
         {
             title: "ReActEdge Announces Manifold 10 for Defense and Commercial Aircraft",
-            image: "/images/platform/img.png",
+            image: "/images/platform/manifold-10-announcement.png",
             description:
                 "Progress Toward FAA Certification to Equip Operators and Maintainers of Bombardier and Boeing Aircraft with Real-Time Insights Derived from Onboard Serial Data",
         },
@@ -300,17 +300,17 @@ export const INSIGHT: Insight = {
 
 export const INSIGHTS_PAGE = {
     bannerTitle: "ReAct/Insights",
-    bannerImage: "/images/insights/img.png",
-    articleImages: ["/images/insights/ReActEdge-02-01.jpg", "/images/insights/ReActEdge-01-01.png"],
+    bannerImage: "/images/insights/insights-banner.png",
+    articleImages: ["/images/insights/article-image-1.jpg", "/images/insights/article-image-2.png"],
     relatedImages: [
-        "/images/insights/logo.png",
-        "/images/insights/logo1.png",
-        "/images/insights/ima.png",
-        "/images/insights/img3.png",
-        "/images/insights/business_card_animated.gif",
-        "/images/insights/logo3.png",
-        "/images/insights/logo4.png",
-        "/images/insights/logo5.png",
+        "/images/insights/gallery-01.png",
+        "/images/insights/gallery-02.png",
+        "/images/insights/gallery-03.png",
+        "/images/insights/gallery-04.png",
+        "/images/insights/gallery-05.gif",
+        "/images/insights/gallery-06.png",
+        "/images/insights/gallery-07.png",
+        "/images/insights/gallery-08.png",
     ],
     additionalReadingTitle: "Additional Reading",
     additionalReading: [

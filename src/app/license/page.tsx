@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-export const metadata = { title: "License Agreement" };
-
 const EMAIL = "info@ReActEdge.io";
 
 type Section = { title: string; paragraphs?: string[]; list?: string[]; after?: string };

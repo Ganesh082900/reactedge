@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { INSIGHT } from "@/content/site";
 import InsightArticleView from "@/components/insights/InsightArticleView";
 

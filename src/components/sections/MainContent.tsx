@@ -2,6 +2,7 @@
 
 import React from "react";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import AnimatedHeading from "@/components/atoms/AnimatedHeading";
 
 interface RightContent {
     icon?: React.ReactNode;
@@ -35,26 +36,24 @@ export default function MainContent({
             {/* CONTAINER */}
             <div className="max-w-[1280px] mx-auto w-full px-6 relative">
                 {/* GRID */}
-                <div className="flex justify-between items-start">
+                <div className="flex flex-col gap-10 py-28 md:flex-row md:justify-between md:items-start md:py-0">
 
                     {/* LEFT BIG TEXT */}
-                    <div className="w-[65%]">
-                        <h1
-                            data-animate
-                            className="font-extrabold leading-[0.85] tracking-tighter fade-up"
-                            style={{
-                                fontSize: "clamp(64px, 12vw, 180px)",
-                            }}
-                        >
-                            {text}
-                        </h1>
+                    <div className="w-full md:w-[65%]">
+                        <AnimatedHeading
+                            as="h1"
+                            mode="lines"
+                            text={text.split("\n")}
+                            className="font-bold leading-[0.85] tracking-tighter"
+                            style={{ fontSize: "clamp(64px, 12vw, 180px)" }}
+                        />
                     </div>
 
                     {/* RIGHT CARD */}
-                    <div className="w-[32%] flex justify-end">
+                    <div className="w-full md:w-[32%] flex md:justify-end">
                         <div
                             data-animate
-                            className="p-10 rounded-xl scale-in"
+                            className="p-6 sm:p-10 rounded-xl scale-in"
                             style={{
                                 background: "#ff4d3d",
                                 color: "#000",
@@ -76,9 +75,9 @@ export default function MainContent({
 
                             {/* DESCRIPTION */}
                             <p
-                                className="mt-6 text-[11px] tracking-[0.15em] uppercase leading-relaxed"
+                                className="mt-6 text-[11px] tracking-[0.15em] uppercase leading-relaxed break-words"
                                 style={{
-                                    fontFamily: "JetBrains Mono, monospace",
+                                    fontFamily: "var(--font-plex-mono), monospace",
                                 }}
                             >
                                 {rightContent.description}

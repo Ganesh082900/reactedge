@@ -2,12 +2,12 @@
 
 "use client";
 
-import { useRef } from "react";
+import { useRef, type MouseEvent, type ReactNode } from "react";
 
-export default function Magnetic({ children }: any) {
+export default function Magnetic({ children }: { children: ReactNode }) {
     const ref = useRef<HTMLDivElement>(null);
 
-    const handleMove = (e: any) => {
+    const handleMove = (e: MouseEvent<HTMLDivElement>) => {
         const rect = ref.current!.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;

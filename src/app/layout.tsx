@@ -5,23 +5,24 @@ import CursorGlow from "@/components/effects/CursorGlow";
 import Footer from "@/components/footer/Footer";
 import PageLoader from "@/components/layout/PageLoader";
 import LayoutClient from "@/components/layout/LayoutClient";
-import Breadcrumbs from "@/components/seo/Breadcrumbs";
 import StructuredData from "@/components/seo/StructuredData";
 import Analytics from "@/components/seo/Analytics";
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google';
 import { generateSEO, generateOrganizationSchema } from '@/lib/seo';
 
-const inter = Inter({
+const plexSans = IBM_Plex_Sans({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-plex-sans',
   preload: true,
 });
 
-const jetbrainsMono = JetBrains_Mono({
+const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
+  weight: ['400', '500', '700'],
   display: 'swap',
-  variable: '--font-jetbrains-mono',
+  variable: '--font-plex-mono',
   preload: true,
 });
 
@@ -61,12 +62,10 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <StructuredData data={organizationSchema} />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body 
-        className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+        className={`${plexSans.variable} ${plexMono.variable} font-sans antialiased`}
         suppressHydrationWarning
       >
         <PageLoader />
@@ -75,7 +74,6 @@ export default function RootLayout({
         </a>
         <CursorGlow />
         <Navbar />
-        {/* <Breadcrumbs /> */}
         <main id="main-content" role="main">{children}</main>
         <LayoutClient />
         <Footer />

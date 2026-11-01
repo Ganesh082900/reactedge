@@ -7,7 +7,7 @@ export const siteConfig = {
   title: 'ReActEdge | Cyber & Predictive Intelligence Platform',
   description: 'Advanced cybersecurity, predictive maintenance, and compliance solutions for defense and transportation systems.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://reactedge.com',
-  ogImage: '/images/og-image.jpg',
+  ogImage: '/images/brand/logo-og.png',
   twitterHandle: '@reactedge',
   author: 'ReActEdge',
   keywords: [
@@ -61,7 +61,8 @@ export function generateSEO({
   
   const pageDescription = description || siteConfig.description;
   const pageImage = image || siteConfig.ogImage;
-  const pageUrl = url || siteConfig.url;
+  const pageUrl = url || '/';
+  const hasPath = Boolean(url || canonical);
   const pageKeywords = keywords || siteConfig.keywords;
 
   const metadata: Metadata = {
@@ -121,17 +122,15 @@ export function generateSEO({
     },
 
     // Alternate links
-    alternates: {
-      canonical: canonical || pageUrl,
-    },
+    ...(hasPath && { alternates: { canonical: canonical || pageUrl } }),
 
     // Verification
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
       yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
-      other: {
-        'msvalidate.01': [process.env.NEXT_PUBLIC_BING_VERIFICATION || ''],
-      },
+      ...(process.env.NEXT_PUBLIC_BING_VERIFICATION && {
+        other: { 'msvalidate.01': [process.env.NEXT_PUBLIC_BING_VERIFICATION] },
+      }),
     },
 
     // Category
@@ -148,7 +147,7 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/images/logo.png`,
+    logo: `${siteConfig.url}/images/brand/logo-og.png`,
     description: siteConfig.description,
     address: {
       '@type': 'PostalAddress',
@@ -212,7 +211,7 @@ export function generateArticleSchema(props: {
       name: siteConfig.name,
       logo: {
         '@type': 'ImageObject',
-        url: `${siteConfig.url}/images/logo.png`,
+        url: `${siteConfig.url}/images/brand/logo-og.png`,
       },
     },
     mainEntityOfPage: {

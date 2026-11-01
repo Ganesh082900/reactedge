@@ -1,16 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function useScrollAnimation() {
-    const [isHydrated, setIsHydrated] = useState(false);
-
-    // Wait for hydration to complete
     useEffect(() => {
-        setIsHydrated(true);
-    }, []);
-
-    useEffect(() => {
-        if (!isHydrated) return;
-
         const elements = document.querySelectorAll("[data-animate]");
 
         const observer = new IntersectionObserver(
@@ -29,5 +20,5 @@ export default function useScrollAnimation() {
         elements.forEach((el) => observer.observe(el));
 
         return () => observer.disconnect();
-    }, [isHydrated]);
+    }, []);
 }
